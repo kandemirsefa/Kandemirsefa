@@ -2,136 +2,100 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Sefa Kandemir - Profesyonel Portfolyo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sefa Kandemir | Operasyonel Disiplin ve Saha Vizyonu</title>
     <style>
-        /* Modern ve Minimalist Tema Ayarları */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-            color: #2d3436;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
+        :root {
+            --primary-blue: #0a3d62;
+            --accent-green: #38ada9;
+            --text-dark: #2f3542;
+            --bg-light: #f1f2f6;
         }
-        .container {
-            max-width: 800px;
+
+        body {
+            font-family: 'Georgia', serif; /* Makale hissi için serif font */
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .article-container {
+            max-width: 750px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .header {
+
+        header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 30px;
         }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #0984e3; /* Hava Kuvvetleri Mavisi Vurgusu */
-        }
+
         h1 {
-            margin: 20px 0 10px;
-            font-size: 2.2rem;
-            color: #1e272e;
+            font-size: 2.5rem;
+            margin: 10px 0;
+            color: var(--primary-blue);
         }
-        .tagline {
-            font-style: italic;
-            color: #636e72;
-        }
-        .section {
-            margin-top: 40px;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-        }
-        h2 {
-            color: #0984e3;
-            font-size: 1.5rem;
+
+        .subtitle {
+            font-family: 'Arial', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .experience-item {
-            margin-bottom: 25px;
-        }
-        .job-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .company-date {
-            color: #00b894;
+            letter-spacing: 2px;
             font-size: 0.9rem;
-            margin-bottom: 5px;
+            color: var(--accent-green);
+            font-weight: bold;
         }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+
+        .dropcap {
+            float: left;
+            font-size: 4rem;
+            line-height: 1;
+            padding-right: 12px;
+            color: var(--primary-blue);
+            font-weight: bold;
         }
-        .skill-badge {
-            background: #dfe6e9;
-            padding: 8px 15px;
-            border-radius: 50px;
+
+        p {
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: var(--bg-light);
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin: 35px 0;
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 50px;
             text-align: center;
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 600px) {
+            .article-container { padding: 30px 20px; }
+            h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h1>Sefa Kandemir</h1> [cite: 1]
-        <p class="tagline">Disiplin, Operasyon ve Saha Uzmanlığı</p>
-    </div>
+<div class="article-container">
+    <header>
+        <div class="subtitle">Saha Operasyonları & Stratejik Lojistik</div>
+        <h1>Sefa Kandemir</h1>
+    </header>
 
-    <div class="section">
-        <h2>Hakkımda</h2>
-        <p>
-            Kariyer yolculuğuma <strong>Hava Kuvvetleri Komutanlığı</strong> bünyesinde aldığım üst düzey disiplin ve hiyerarşik düzen bilinciyle başladım[cite: 21, 22]. 
-            Bu temel üzerine inşa ettiğim profesyonel hayatımda; lojistik, saha operasyonları ve güvenlik protokolleri konularında uzmanlaştım[cite: 7]. 
-            Özellikle havacılık ve yer hizmetleri odaklı projelerde; ağır yük, montaj ve İSG standartlarında operasyon yönetimi konularında aktif rol aldım[cite: 9, 13]. 
-            Fiziksel dayanıklılık gerektiren süreçlere ve esnek vardiya sistemlerine tam uyum sağlayarak çözüm odaklı performans sergiliyorum[cite: 8, 25].
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>Mesleki Deneyim</h2>
-        
-        <div class="experience-item">
-            <div class="job-title">Saha Operasyon ve Lojistik Elemanı</div>
-            <div class="company-date">FABRİKONYA | Haziran 2024 - Temmuz 2025</div> [cite: 11]
-            <p>Uçak restoran, uçak kafe ve prefabrik yapıların saha kurulum süreçlerini ve lojistik operasyonlarını İSG standartlarında yönettim[cite: 12, 13].</p>
-        </div>
-
-        <div class="experience-item">
-            <div class="job-title">Lojistik Transfer ve Güvenlik</div>
-            <div class="company-date">ARD KIYMETLİ MADENLER | Kasım 2019 - Ekim 2024</div> [cite: 14]
-            <p>Kıymetli ürünlerin emniyetli transferi, stok takibi ve katı güvenlik protokollerinin uygulanması süreçlerini yürüttüm[cite: 15, 16].</p>
-        </div>
-
-        <div class="experience-item">
-            <div class="job-title">Saha Kontrol ve Denetim Elemanı</div>
-            <div class="company-date">BOF DESIGN | Kasım 2018 - Kasım 2019</div> [cite: 17]
-            <p>Taşeron ekiplerin işleyişini, malzeme giriş-çıkışını ve saha operasyonlarının İSG uyumunu denetledim[cite: 18, 19].</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Yetkinlikler & Diller</h2>
-        <div class="skills-grid">
-            <div class="skill-badge">Arapça (İleri Seviye)</div> [cite: 27]
-            <div class="skill-badge">İngilizce (Orta Seviye)</div> [cite: 28]
-            <div class="skill-badge">Havacılık Disiplini</div> [cite: 25]
-            <div class="skill-badge">İSG & Saha Güvenliği</div> [cite: 13, 18]
-            <div class="skill-badge">Lojistik Planlama</div> [cite: 11, 14]
-            <div class="skill-badge">Esnek Vardiya Uyumu</div> [cite: 25]
-        </div>
-    </div>
-</div>
-
-</body>
-</html>
+    <article>
+        <p><span class="dropcap">K</span>ariyer yolculuğumun temel taşları, 2015 yılında <strong>Hava Kuvvetleri Komutanlığı</strong> bünyesinde adım attığım askeri disiplin ve hiyerarşik düzenle atıldı. Havacılık dünyasının tavizsiz kuralları ve operasyonel ciddiyeti, sonraki tüm profesyonel adımlarımda rehberim oldu. Bu süreçte kazandığım talimatlara tam uyum ve kriz anındaki soğukkanlılık, sivil kariyerimde karmaşık saha operasyonlarını yönetmemi sağlayan en büyük gücüm haline
