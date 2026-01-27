@@ -1,226 +1,224 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sefa Kandemir | Uluslararası Operasyon Deneyimi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sefa Kandemir | Uluslararası Operasyon Deneyimi</title>
 
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            font-family: 'Inter', -apple-system, system-ui, sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
-            line-height: 1.8;
-        }
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+    color: #e5e7eb;
+    line-height: 1.8;
+}
 
-        .main-container {
-            max-width: 650px;
-            margin: 40px auto;
-            background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            overflow: hidden;
-            padding-bottom: 60px;
-        }
+.main-container {
+    max-width: 720px;
+    margin: 60px auto;
+    background: #020617;
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    overflow: hidden;
+}
 
-        .hero-section {
-            background: #1e293b;
-            height: 240px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-        }
+.hero {
+    background: linear-gradient(135deg, #020617, #020617);
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
 
-        .profile-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 6px solid #fff;
-            margin-bottom: -90px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
+.profile-photo {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.15);
+    margin-bottom: -85px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
 
-        .profile-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .content-body {
-            padding: 110px 40px 30px;
-            text-align: center;
-        }
+.content {
+    padding: 120px 50px 50px;
+}
 
-        h1 {
-            font-size: 2.2rem;
-            color: #0f172a;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
+h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #f8fafc;
+    text-align: center;
+}
 
-        .main-tagline {
-            color: #64748b;
-            font-size: 1rem;
-            margin-bottom: 50px;
-            display: block;
-            letter-spacing: 1px;
-        }
+.tagline {
+    text-align: center;
+    color: #94a3b8;
+    margin-top: 6px;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
 
-        .section-title {
-            font-size: 1.4rem;
-            color: #0f172a;
-            margin: 40px 0 25px;
-            text-align: left;
-            border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 10px;
-        }
+.section-title {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+    margin-top: 50px;
+    color: #f8fafc;
+    border-left: 4px solid #3b82f6;
+    padding-left: 14px;
+}
 
-        .narrative-p {
-            font-size: 1.05rem;
-            color: #475569;
-            text-align: justify;
-            margin-bottom: 20px;
-        }
+p {
+    color: #cbd5f5;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
 
-        .experience-item {
-            text-align: left;
-            margin-bottom: 35px;
-        }
+.experience {
+    margin-bottom: 40px;
+}
 
-        .job-title {
-            font-size: 1.15rem;
-            color: #0f172a;
-            font-weight: 600;
-        }
+.role {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #f8fafc;
+}
 
-        .job-meta {
-            font-size: 0.9rem;
-            color: #3b82f6;
-            margin-bottom: 12px;
-            display: block;
-        }
+.meta {
+    color: #60a5fa;
+    font-size: 0.9rem;
+    margin: 6px 0 12px;
+    display: block;
+}
 
-        .job-description {
-            font-size: 0.95rem;
-            color: #64748b;
-        }
+.desc {
+    color: #cbd5f5;
+    font-size: 0.95rem;
+}
 
-        .skills-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
-        .skill-tag {
-            background: #f1f5f9;
-            color: #475569;
-            padding: 6px 16px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
+.tag {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: #e5e7eb;
+}
 
-        footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #f1f5f9;
-            color: #94a3b8;
-            font-size: 0.8rem;
-            text-align: center;
-        }
-    </style>
+footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+</style>
 </head>
 
 <body>
 
 <div class="main-container">
 
-    <div class="hero-section">
-        <div class="profile-photo">
-            <img src="IMG.jpeg.jpg" alt="Sefa Kandemir">
-        </div>
+<div class="hero">
+    <div class="profile-photo">
+        <img src="IMG.jpeg.jpg" alt="Sefa Kandemir">
     </div>
+</div>
 
-    <div class="content-body">
-        <h1>Sefa Kandemir</h1>
-        <span class="main-tagline">Uluslararası Saha Operasyonları & Lojistik</span>
+<div class="content">
 
-        <div class="section-title">Uluslararası Operasyon Deneyimi</div>
+<h1>Sefa Kandemir</h1>
+<div class="tagline">Uluslararası Saha Operasyonları & Proje Koordinasyonu</div>
 
-        <p class="narrative-p">
-            Kariyer yolculuğum, hava kuvvetleri bünyesinde edindiğim disiplin ve operasyonel yaklaşım üzerine inşa edilmiştir.
-            Uluslararası ticaret ve pazarlama alanında 12 yılı aşkın süredir, özellikle Fas pazarında çok disiplinli ve
-            geniş ölçekli projelerin yönetiminde aktif rol aldım.
-        </p>
+<div class="section-title">Uluslararası Operasyon Deneyimi</div>
 
-        <p class="narrative-p">
-            Şantiye yönetiminden stratejik lojistik planlamaya, saha koordinasyonundan tedarik zinciri süreçlerine kadar
-            operasyonların her aşamasında görev alarak projelerin zamanında ve güvenli şekilde tamamlanmasını sağladım.
-            Prefabrik yapılar, özel konsept tesisler ve yüksek hassasiyet gerektiren lojistik operasyonlar uzmanlık alanlarım
-            arasında yer almaktadır.
-        </p>
+<p>
+Kariyerim, hava kuvvetleri bünyesinde kazandığım disiplin ve operasyonel bakış açısı üzerine inşa edilmiştir.
+Uluslararası ticaret, saha operasyonları ve proje koordinasyonu alanlarında 12 yılı aşkın süredir,
+özellikle Fas merkezli çok paydaşlı projelerde aktif görev aldım.
+</p>
 
-        <div class="section-title">Deneyimler</div>
+<p>
+Planlama, saha uygulaması, lojistik entegrasyon ve operasyonel denetim süreçlerini kapsayan projelerde,
+yerel ve uluslararası ekiplerle koordinasyon sağlayarak yüksek hassasiyet gerektiren operasyonların
+başarıyla tamamlanmasına liderlik ettim.
+</p>
 
-        <div class="experience-item">
-            <div class="job-title">Şantiye Sorumlusu</div>
-            <span class="job-meta">Agadir | Haziran 2024 – Temmuz 2025</span>
-            <p class="job-description">
-                Prefabrik yapılar ve sosyal tesis projelerinde saha koordinasyonu, ekip yönetimi,
-                malzeme tedariki ve iş güvenliği süreçlerini yönettim.
-            </p>
-        </div>
+<div class="section-title">Deneyimler</div>
 
-        <div class="experience-item">
-            <div class="job-title">Yurtdışı Satış ve Lojistik Yöneticisi</div>
-            <span class="job-meta">Casablanca | Kasım 2019 – Ekim 2024</span>
-            <p class="job-description">
-                Kıymetli maden lojistiği, güvenli transfer operasyonları ve pazar geliştirme
-                süreçlerini yönettim.
-            </p>
-        </div>
-
-        <div class="experience-item">
-            <div class="job-title">Şantiye Şefi Yardımcısı</div>
-            <span class="job-meta">Casablanca | Kasım 2018 – Kasım 2019</span>
-            <p class="job-description">
-                Saha uygulamaları, taşeron koordinasyonu ve iş güvenliği denetimlerini yürüttüm.
-            </p>
-        </div>
-
-        <div class="experience-item">
-            <div class="job-title">Restoran ve Operasyon Müdürü</div>
-            <span class="job-meta">Casablanca | 2012 – 2017</span>
-            <p class="job-description">
-                Operasyonel süreçlerin yönetimi, ekip organizasyonu ve maliyet kontrolü
-                sorumluluklarını üstlendim.
-            </p>
-        </div>
-
-        <div class="section-title">Çok Dilli Çalışma Yetkinliği</div>
-        <div class="skills-wrap">
-            <span class="skill-tag">Arapça</span>
-            <span class="skill-tag">İngilizce</span>
-            <span class="skill-tag">Fransızca</span>
-        </div>
-
-        <div class="section-title">Operasyonel Yetkinlikler</div>
-        <div class="skills-wrap">
-            <span class="skill-tag">Saha Denetimi</span>
-            <span class="skill-tag">Lojistik Planlama</span>
-            <span class="skill-tag">İSG Yönetimi</span>
-            <span class="skill-tag">Tedarik Zinciri</span>
-            <span class="skill-tag">Ekip Koordinasyonu</span>
-        </div>
-
-        <footer>
-            © 2026 Sefa Kandemir
-        </footer>
-
+<div class="experience">
+    <div class="role">Uluslararası Proje Koordinatörü</div>
+    <span class="meta">Agadir | Haziran 2024 – Temmuz 2025</span>
+    <div class="desc">
+        Uluslararası prefabrik yapı ve sosyal tesis projelerinde saha koordinasyonu, ekip yönetimi,
+        tedarik süreçleri ve iş güvenliği standartlarının uygulanmasını yönettim.
     </div>
+</div>
+
+<div class="experience">
+    <div class="role">Yurtdışı Satış ve Lojistik Yöneticisi</div>
+    <span class="meta">Casablanca | Kasım 2019 – Ekim 2024</span>
+    <div class="desc">
+        Kıymetli maden lojistiği, güvenli transfer operasyonları ve uluslararası pazar geliştirme
+        süreçlerini yönettim.
+    </div>
+</div>
+
+<div class="experience">
+    <div class="role">Uluslararası Proje Koordinatörü</div>
+    <span class="meta">Casablanca | Kasım 2018 – Kasım 2019</span>
+    <div class="desc">
+        Çok disiplinli saha projelerinde uygulama, taşeron koordinasyonu ve iş güvenliği
+        süreçlerini yönettim.
+    </div>
+</div>
+
+<div class="experience">
+    <div class="role">Restoran ve Operasyon Müdürü</div>
+    <span class="meta">Casablanca | 2012 – 2017</span>
+    <div class="desc">
+        Operasyonel süreç yönetimi, ekip organizasyonu ve maliyet kontrolü
+        alanlarında yöneticilik yaptım.
+    </div>
+</div>
+
+<div class="section-title">Çok Dilli Çalışma Yetkinliği</div>
+<div class="tags">
+    <div class="tag">Arapça</div>
+    <div class="tag">İngilizce</div>
+    <div class="tag">Fransızca</div>
+</div>
+
+<div class="section-title">Operasyonel Yetkinlikler</div>
+<div class="tags">
+    <div class="tag">Uluslararası Proje Yönetimi</div>
+    <div class="tag">Saha Koordinasyonu</div>
+    <div class="tag">Lojistik Planlama</div>
+    <div class="tag">İSG Yönetimi</div>
+    <div class="tag">Çok Uluslu Ekip Yönetimi</div>
+</div>
+
+<footer>
+© 2026 Sefa Kandemir
+</footer>
+
+</div>
 </div>
 
 </body>
