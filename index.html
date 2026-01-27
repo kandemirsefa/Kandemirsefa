@@ -3,235 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sefa Kandemir | Operasyonel Liderlik ve Saha Vizyonu</title>
+    <title>Sefa Kandemir | Operasyonel Deneyim</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f7f6;
-            color: #2c3e50;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
             line-height: 1.8;
             overflow-y: auto; 
         }
 
         .main-container {
-            max-width: 700px;
-            margin: 50px auto;
+            max-width: 650px;
+            margin: 40px auto;
             background: #ffffff;
-            border-radius: 40px;
-            box-shadow: 0 30px 100px rgba(0,0,0,0.08);
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             overflow: hidden;
             padding-bottom: 60px;
         }
 
-        .hero-banner {
-            background: linear-gradient(145deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            height: 280px;
+        .hero-section {
+            background: #1e293b;
+            height: 240px;
             display: flex;
             justify-content: center;
             align-items: flex-end;
             position: relative;
         }
 
-        .profile-frame {
-            width: 200px;
-            height: 200px;
+        .profile-photo {
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            border: 8px solid #fff;
-            background: #fff;
-            margin-bottom: -100px;
+            border: 6px solid #fff;
+            margin-bottom: -90px;
             z-index: 5;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        .profile-frame img {
+        .profile-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
         .content-body {
-            padding: 120px 50px 30px;
+            padding: 110px 40px 30px;
             text-align: center;
         }
 
-        h1 { font-size: 2.8rem; color: #1a1a1a; margin-bottom: 10px; font-weight: 800; }
+        h1 { font-size: 2.2rem; color: #0f172a; margin-bottom: 8px; font-weight: 700; }
         
-        .role-badge { 
-            display: inline-block;
-            background: #e1f5fe;
-            color: #0288d1;
-            padding: 8px 25px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .main-tagline { 
+            display: block;
+            color: #64748b;
+            font-size: 1rem;
             margin-bottom: 50px;
+            letter-spacing: 1px;
         }
 
-        .story-section {
-            text-align: justify;
-            margin-bottom: 60px;
-        }
-
-        .story-section h2 {
-            font-size: 1.6rem;
-            color: #0f2027;
-            margin-bottom: 25px;
-            text-align: center;
-            position: relative;
+        .section-title {
+            font-size: 1.4rem;
+            color: #0f172a;
+            margin: 40px 0 25px;
+            text-align: left;
+            border-bottom: 1px solid #f1f5f9;
             padding-bottom: 10px;
         }
 
-        .story-section h2::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: #38ada9;
-            border-radius: 2px;
+        .narrative-p {
+            font-size: 1.05rem;
+            color: #475569;
+            text-align: justify;
+            margin-bottom: 20px;
         }
 
-        .story-p {
-            font-size: 1.15rem;
-            color: #444;
-            margin-bottom: 25px;
-            text-indent: 30px;
-        }
-
-        .experience-timeline {
+        .experience-item {
             text-align: left;
-            margin-top: 50px;
+            margin-bottom: 35px;
         }
 
-        .timeline-item {
-            padding: 30px;
-            border-radius: 25px;
-            background: #fdfdfd;
-            border: 1px solid #f0f0f0;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
         }
 
-        .timeline-item:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-color: #38ada9;
+        .job-title {
+            font-size: 1.15rem;
+            color: #0f172a;
+            font-weight: 600;
+            flex: 1;
         }
 
-        .timeline-item h3 { color: #0f2027; font-size: 1.3rem; margin-bottom: 5px; }
-        .timeline-item .sub-info { color: #38ada9; font-weight: 700; font-size: 0.9rem; margin-bottom: 15px; display: block; }
-        .timeline-item p { color: #666; font-size: 1rem; line-height: 1.7; }
+        .job-meta {
+            font-size: 0.9rem;
+            color: #3b82f6;
+            font-weight: 500;
+            text-align: left;
+            margin-bottom: 10px;
+            display: block;
+        }
 
-        .skill-cloud {
+        .job-description {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        .skills-wrap {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 10px;
+            justify-content: flex-start;
         }
 
-        .skill-item {
-            background: #f1f2f6;
-            color: #2c3e50;
-            padding: 10px 20px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .footer-end {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-            color: #bdc3c7;
+        .skill-tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 6px 16px;
+            border-radius: 8px;
             font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #f1f5f9;
+            color: #94a3b8;
+            font-size: 0.8rem;
         }
 
         @media (max-width: 600px) {
-            .content-body { padding: 100px 25px 30px; }
-            h1 { font-size: 2rem; }
-            .story-p { font-size: 1rem; }
+            .content-body { padding: 100px 20px 30px; }
+            h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
 <div class="main-container">
-    <div class="hero-banner">
-        <div class="profile-frame">
+    <div class="hero-section">
+        <div class="profile-photo">
             <img src="https://r.jina.ai/i/6c10b406b2904c9597f7481f9b37604d" alt="Sefa Kandemir">
         </div>
     </div>
 
     <div class="content-body">
         <h1>Sefa Kandemir</h1>
-        <span class="role-badge">Uluslararası Operasyon Uzmanı</span>
+        <span class="main-tagline">Uluslararası Saha Operasyonları & Lojistik</span>
 
-        <div class="story-section">
-            <h2>Vizyon ve Kariyer Hikayesi</h2>
-            <p class="story-p">
-                Kariyer yolculuğum, 2015 yılında <strong>Hava Kuvvetleri Komutanlığı</strong> saflarında aldığım o sarsılmaz disiplin ve mutlak profesyonellik bilinciyle başladı. Havacılık dünyasının hatayı kabul etmeyen, yüksek standartlı çalışma kültürü; bugün yönettiğim her projenin ana omurgasını oluşturuyor. Bu disiplini, 12 yılı aşkın uluslararası ticaret ve pazarlama tecrübemle birleştirerek, sahanın her noktasında katma değer yaratan bir vizyon inşa ettim.
-            </p>
-            <p class="story-p">
-                Özellikle <strong>Fas</strong> pazarında geçirdiğim uzun yıllar, bana sadece dil yetkinliği (ileri seviye Arapça ve Fransızca) değil, aynı zamanda farklı kültürlerde karmaşık operasyonları yönetme yetisi kazandırdı. Şantiye sorumluluğundan uluslararası pazarlama yöneticiliğine kadar geniş bir yelpazede; prefabrik yapılar, uçak restoranlar ve aqua parklar gibi vizyon projelerin hayata geçirilmesinde liderlik ettim.
-            </p>
-            <p class="story-p">
-                Havacılık ve yer hizmetlerindeki teknik hassasiyetimi, <strong>ARD Kıymetli Madenler</strong> bünyesindeki kasa yönetimi ve lojistik güvenlik süreçlerine aktardım. Bugün, fiziksel dayanıklılık gerektiren saha koşullarından stratejik bütçe yönetimine, ekip koordinasyonundan kriz anındaki soğukkanlılığa kadar her alanda çözüm odaklı bir performans sergiliyorum.
-            </p>
+        <div class="section-title">Profesyonel Hikaye</div>
+        <p class="narrative-p">
+            Kariyer yolculuğum, hava kuvvetleri bünyesinde kazandığım disiplin ve operasyonel ciddiyet temelleri üzerine kuruldu. Uluslararası ticaret ve pazarlama alanındaki 12 yılı aşkın deneyimimle, özellikle Fas pazarında geniş çaplı projelerin yönetimini üstlendim. Şantiye sorumluluğundan stratejik lojistik süreçlerine kadar, sahanın her aşamasında aktif rol alarak projelerin başarıyla tamamlanmasını sağladım.
+        </p>
+        <p class="narrative-p">
+            Prefabrik yapılar, özel konsept tesisler ve kıymetli maden lojistiği gibi yüksek hassasiyet gerektiren alanlarda uzmanlaştım. İleri seviye Arapça ve profesyonel çalışma disiplinimle, zorlu saha koşullarında ve çok uluslu ekiplerle verimli operasyonlar yürütme yetkinliğine sahibim.
+        </p>
+
+        <div class="section-title">Deneyimler</div>
+
+        <div class="experience-item">
+            <div class="job-title">Şantiye Sorumlusu</div>
+            <span class="job-meta">Agadir | Haziran 2024 - Temmuz 2025</span>
+            <p class="job-description">Özel inşaat projeleri kapsamında prefabrik yapılar ve sosyal tesislerin koordinasyonunu sağladım. Ekip yönetimi, malzeme tedariki ve İSG standartlarının uygulanması süreçlerini yürüttüm.</p>
         </div>
 
-        <div class="experience-timeline">
-            <h2>Profesyonel Kilometre Taşları</h2>
-
-            <div class="timeline-item">
-                <h3>Şantiye Sorumlusu & Proje Koordinatörü</h3>
-                <span class="sub-info">FABRİKONYA | Agadir, Fas | 2024 - 2025</span>
-                <p>Uçak restoran, uçak kafe ve devasa aqua park projelerinin saha kurulum süreçlerini yönettim. Malzeme tedariğinden ekip yönetimine kadar tüm aşamaları, uluslararası İSG ve kalite standartlarında başarıyla tamamladım.</p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>Lojistik Transfer & Pazarlama Yöneticisi</h3>
-                <span class="sub-info">ARD KIYMETLİ MADENLER | Casablanca | 2019 - 2024</span>
-                <p>Kıymetli madenlerin güvenli sevkiyatı ve kasa yönetimini üstlendim. Fas pazarında iş geliştirme fırsatlarını belirleyerek, stratejik pazarlama planlarıyla şirketin pazar payını genişlettim.</p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>Şantiye Şefi Yardımcısı</h3>
-                <span class="sub-info">BOF DESIGN | Casablanca | 2018 - 2019</span>
-                <p>Proje çizimlerinin sahada uygulanabilirliğini denetledim. Taşeron ekiplerin koordinasyonunu sağlayarak, projelerin zamanında ve sıfır iş kazası ile teslim edilmesine katkıda bulundum.</p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>Restoran ve Operasyon Müdürü</h3>
-                <span class="sub-info">MAPAVRİ SARL | Fas | 2012 - 2017</span>
-                <p>Türk mutfağını temsil eden prestijli restoranlarda yönetim ve operasyon süreçlerini yürüttüm. Maliyet kontrolü, envanter yönetimi ve müşteri memnuniyeti stratejileriyle marka itibarını güçlendirdim.</p>
-            </div>
+        <div class="experience-item">
+            <div class="job-title">Yurtdışı Satış ve Lojistik Yöneticisi</div>
+            <span class="job-meta">Casablanca | Kasım 2019 - Ekim 2024</span>
+            <p class="job-description">Kıymetli madenlerin güvenli transferi ve kasa yönetimini gerçekleştirdim. Pazar analizleri yaparak iş geliştirme fırsatlarını belirledim ve operasyonel verimliliği artırdım.</p>
         </div>
 
-        <div class="content-section" style="margin-top: 50px;">
-            <h2>Uzmanlık Alanları</h2>
-            <div class="skill-cloud">
-                <span class="skill-item">Arapça (İleri)</span>
-                <span class="skill-item">İngilizce (Orta)</span>
-                <span class="skill-item">Fransızca (Temel)</span>
-                <span class="skill-item">Havacılık Disiplini</span>
-                <span class="skill-item">Uluslararası Pazarlama</span>
-                <span class="skill-item">İSG & Saha Güvenliği</span>
-                <span class="skill-item">Proje Yönetimi</span>
-                <span class="skill-item">Lojistik Planlama</span>
-                <span class="skill-item">Bütçe Kontrolü</span>
-            </div>
+        <div class="experience-item">
+            <div class="job-title">Şantiye Şefi Yardımcısı</div>
+            <span class="job-meta">Casablanca | Kasım 2018 - Kasım 2019</span>
+            <p class="job-description">Saha çizimlerinin uygunluk denetimini ve taşeron ekiplerin koordinasyonunu üstlendim. İş güvenliği protokollerinin eksiksiz uygulanmasını garanti altına aldım.</p>
         </div>
 
-        <div class="footer-end">
-            © 2026 | Sefa Kandemir | İstanbul, Türkiye
+        <div class="experience-item">
+            <div class="job-title">Pazarlama ve Üretim Sorumlusu</div>
+            <span class="job-meta">Fas | Ocak 2018 - Kasım 2018</span>
+            <p class="job-description">Stratejik pazarlama projelerinde yer aldım ve üretim süreçlerinin verimliliğini artırmaya yönelik saha çalışmalarına katkıda bulundum.</p>
         </div>
+
+        <div class="experience-item">
+            <div class="job-title">Restoran ve Operasyon Müdürü</div>
+            <span class="job-meta">Casablanca | 2012 - 2017</span>
+            <p class="job-description">Yönetim ve operasyon süreçlerini yürüterek hizmet kalitesini ve ekip koordinasyonunu optimize ettim. Maliyet kontrolü ve tedarik zinciri yönetimini sağladım.</p>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">İdari İşler</div>
+            <span class="job-meta">Türkiye | 2015 - 2016</span>
+            <p class="job-description">Askerlik hizmeti kapsamında operasyonel disiplin ve idari süreç yönetimini tamamladım.</p>
+        </div>
+
+        <div class="section-title">Yetkinlikler</div>
+        <div class="skills-wrap">
+            <span class="skill-tag">Arapça (İleri)</span>
+            <span class="skill-tag">İngilizce (Orta)</span>
+            <span class="skill-tag">Fransızca (Temel)</span>
+            <span class="skill-tag">Saha Denetimi</span>
+            <span class="skill-tag">Lojistik Planlama</span>
+            <span class="skill-tag">İSG Yönetimi</span>
+            <span class="skill-tag">Proje Koordinasyonu</span>
+        </div>
+
+        <footer>
+            Sefa Kandemir | 2026
+        </footer>
     </div>
 </div>
 
