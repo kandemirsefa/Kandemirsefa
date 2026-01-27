@@ -3,99 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sefa Kandemir | Operasyonel Disiplin ve Saha Vizyonu</title>
+    <title>Sefa Kandemir | Saha Operasyon Uzmanı</title>
     <style>
-        :root {
-            --primary-blue: #0a3d62;
-            --accent-green: #38ada9;
-            --text-dark: #2f3542;
-            --bg-light: #f1f2f6;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Georgia', serif; /* Makale hissi için serif font */
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.8;
-            margin: 0;
-            padding: 40px 20px;
-        }
-
-        .article-container {
-            max-width: 750px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 60px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            border-bottom: 2px solid var(--bg-light);
-            padding-bottom: 30px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin: 10px 0;
-            color: var(--primary-blue);
-        }
-
-        .subtitle {
-            font-family: 'Arial', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            color: var(--accent-green);
-            font-weight: bold;
-        }
-
-        .dropcap {
-            float: left;
-            font-size: 4rem;
-            line-height: 1;
-            padding-right: 12px;
-            color: var(--primary-blue);
-            font-weight: bold;
-        }
-
-        p {
-            margin-bottom: 25px;
-            font-size: 1.15rem;
-            text-align: justify;
-        }
-
-        .highlight-box {
-            background: var(--bg-light);
-            border-left: 5px solid var(--primary-blue);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             padding: 20px;
-            margin: 35px 0;
-            font-style: italic;
         }
-
-        footer {
-            margin-top: 50px;
+        .profile-card {
+            background: white;
+            max-width: 450px;
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .top-banner {
+            background: linear-gradient(135deg, #0a3d62 0%, #3c6382 100%);
+            height: 120px;
+            position: relative;
+        }
+        .profile-content {
+            padding: 0 30px 30px;
             text-align: center;
-            font-family: 'Arial', sans-serif;
-            font-size: 0.9rem;
-            color: #7f8c8d;
+            margin-top: -60px;
         }
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid white;
+            background: #eee;
+            margin: 0 auto 15px;
+            object-fit: cover;
+        }
+        h1 { font-size: 1.6rem; color: #1e272e; margin-bottom: 5px; }
+        .title { color: #0a3d62; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; display: block;}
+        
+        .story-section {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .story-section p {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .highlight { color: #0a3d62; font-weight: bold; }
 
-        @media (max-width: 600px) {
-            .article-container { padding: 30px 20px; }
-            h1 { font-size: 1.8rem; }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        .skill-tag {
+            background: #e1e8ed;
+            color: #0a3d62;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .footer-note {
+            margin-top: 25px;
+            font-size: 0.85rem;
+            color: #95a5a6;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
         }
     </style>
 </head>
 <body>
 
-<div class="article-container">
-    <header>
-        <div class="subtitle">Saha Operasyonları & Stratejik Lojistik</div>
+<div class="profile-card">
+    <div class="top-banner"></div>
+    <div class="profile-content">
+        <div class="avatar" style="background: #ccc url('profil-resmin.jpg') center/cover;"></div>
+        
         <h1>Sefa Kandemir</h1>
-    </header>
+        <span class="title">Saha Operasyon & Lojistik</span>
 
-    <article>
-        <p><span class="dropcap">K</span>ariyer yolculuğumun temel taşları, 2015 yılında <strong>Hava Kuvvetleri Komutanlığı</strong> bünyesinde adım attığım askeri disiplin ve hiyerarşik düzenle atıldı. Havacılık dünyasının tavizsiz kuralları ve operasyonel ciddiyeti, sonraki tüm profesyonel adımlarımda rehberim oldu. Bu süreçte kazandığım talimatlara tam uyum ve kriz anındaki soğukkanlılık, sivil kariyerimde karmaşık saha operasyonlarını yönetmemi sağlayan en büyük gücüm haline
+        <div class="story-section">
+            <p>
+                Kariyerime <span class="highlight">Hava Kuvvetleri</span> disipliniyle başladım[cite: 21, 22]. Bu temeli, uçak restoran kurulumlarından kıymetli maden transferine kadar uzanan geniş bir <span class="highlight">saha operasyonu</span> tecrübesiyle birleştirdim[cite: 7, 12, 14].
+            </p>
+            <p>
+                İleri seviye <span class="highlight">Arapça</span> ve orta seviye İngilizce yetkinliğimle, yüksek güvenlikli ve yoğun vardiyalı süreçleri profesyonel bir soğukkanlılıkla yönetiyorum[cite: 8, 25, 27, 28].
+            </p>
+        </div>
+
+        <div class="skills-container">
+            <div class="skill-tag">Havacılık Disiplini</div>
+            <div class="skill-tag">İSG Yönetimi</div>
+            <div class="skill-tag">Lojistik Transfer</div>
+            <div class="skill-tag">Saha Denetimi</div>
+            <div class="skill-tag">Disiplin & Uyum</div>
+        </div>
+
+        <div class="footer-note">
+            Profesyonel Çözüm Ortağı
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
