@@ -1,16 +1,24 @@
-## Hi there 👋
+Selam, Ben Sefa! 👋
+Dijital dünyadaki alanıma hoş geldiniz. Burası benim projelerimi paylaştığım ve profesyonel yolculuğumu not aldığım kişisel günlüğüm gibi.
 
-<!--
-**kandemirsefa/Kandemirsefa** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+✍️ Hakkımda
 
-Here are some ideas to get you started:
+Hava Kuvvetleri'nden gelen disiplini, saha operasyonlarındaki hareketli çalışma temposuyla birleştirmeyi seven biriyim. Sadece iş odaklı değil, her zaman çözüm üretmeye ve yeni şeyler öğrenmeye meraklıyım. Uçak kurulumlarından lojistik süreçlere kadar geniş bir operasyonel tecrübeye sahibim.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+🛠️ Nelerle İlgileniyorum?
+
+Saha Operasyonları: Teknik kurulumlar ve büyük çaplı organizasyonlar.
+
+Lojistik & Süreç Yönetimi: Bir işin mutfağından son aşamasına kadar olan akışı yönetmek.
+
+Kişisel Notlar: İş güvenliği, operasyonel verimlilik ve gelişim üzerine düşünceler.
+
+🌍 Konuştuğum Diller
+
+İnsanlarla iletişim kurmayı seviyorum, bu yüzden diller benim için önemli:
+
+Türkçe (Anadil)
+
+Arapça (İleri Seviye)
+
+İngilizce (Orta Seviye)
