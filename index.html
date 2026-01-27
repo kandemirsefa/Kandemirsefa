@@ -5,134 +5,109 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sefa Kandemir | International Operations</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap');
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+<style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-family:'Inter',sans-serif;
     background:#f9f9f7;
     color:#1f2937;
-    line-height:1.85;
+    line-height:1.8;
 }
 
+/* Layout */
 .container{
-    max-width:900px;
+    max-width:1000px;
     margin:80px auto;
-    background:#ffffff;
-    border-radius:26px;
-    box-shadow:0 25px 80px rgba(0,0,0,0.08);
-    overflow:hidden;
+    padding:0 24px;
 }
 
+/* HERO */
 .hero{
-    padding:70px 70px 40px;
     display:flex;
     align-items:center;
     gap:60px;
+    margin-bottom:100px;
 }
 
 .photo{
-    width:190px;
-    height:190px;
-    border-radius:50%;
-    border:6px solid #e6c27a;
+    width:260px;
+    height:340px;
+    border-radius:26px;
+    border:5px solid #d4af37;
     overflow:hidden;
+    background:#fff;
 }
 
 .photo img{
     width:100%;
     height:100%;
     object-fit:cover;
+    object-position:top;
 }
 
 .hero-text h1{
     font-family:'Playfair Display',serif;
-    font-size:2.7rem;
-    color:#111827;
+    font-size:52px;
+    font-weight:700;
+    letter-spacing:0.5px;
 }
 
-.hero-text span{
-    display:block;
-    margin-top:12px;
-    font-size:0.95rem;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    color:#bfa25a;
+.hero-text h2{
+    margin-top:14px;
+    font-size:14px;
+    letter-spacing:4px;
+    color:#bfa046;
+    font-weight:500;
 }
 
+/* SECTION */
 .section{
-    padding:60px 70px;
+    margin-bottom:90px;
 }
 
 .section-title{
     font-family:'Playfair Display',serif;
-    font-size:1.7rem;
-    color:#111827;
-    margin-bottom:30px;
-    position:relative;
+    font-size:34px;
+    margin-bottom:20px;
 }
 
-.section-title::after{
-    content:'';
-    display:block;
-    width:60px;
+.section-line{
+    width:70px;
     height:3px;
-    background:linear-gradient(90deg,#d4af37,#f1e3a1);
-    margin-top:10px;
-}
-
-p{
-    font-size:1.05rem;
-    color:#374151;
-    margin-bottom:22px;
-    text-align:justify;
-}
-
-.exp{
+    background:#d4af37;
     margin-bottom:40px;
 }
 
-.role{
-    font-size:1.15rem;
+/* EXPERIENCE */
+.job{
+    margin-bottom:50px;
+}
+
+.job-title{
     font-weight:600;
-    color:#111827;
+    font-size:18px;
 }
 
-.meta{
-    display:block;
-    margin:6px 0 12px;
-    color:#bfa25a;
-    font-size:0.9rem;
+.job-meta{
+    color:#bfa046;
+    font-size:14px;
+    margin:6px 0 14px;
 }
 
-.desc{
-    color:#4b5563;
-    font-size:0.95rem;
+.job-desc{
+    max-width:720px;
+    color:#374151;
 }
 
-.tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:14px;
-}
-
-.tag{
-    padding:10px 22px;
-    border-radius:999px;
-    background:#faf7f0;
-    border:1px solid #e6c27a;
-    font-size:0.85rem;
-    color:#7a5c1f;
-}
-
-footer{
-    padding:40px;
+/* FOOTER */
+.footer{
     text-align:center;
-    font-size:0.85rem;
+    font-size:13px;
     color:#9ca3af;
-    border-top:1px solid #f1f1f1;
+    margin-top:100px;
 }
 </style>
 </head>
@@ -141,93 +116,62 @@ footer{
 
 <div class="container">
 
-<div class="hero">
-    <div class="photo">
-        <img src="IMG.jpeg.jpg" alt="Sefa Kandemir">
-    </div>
-    <div class="hero-text">
-        <h1>Sefa Kandemir</h1>
-        <span>International Operations · Projects · Trade & Logistics</span>
-    </div>
-</div>
-
-<div class="section">
-    <div class="section-title">Uluslararası Operasyon Deneyimi</div>
-    <p>
-        Kariyerim, hava kuvvetleri bünyesinde kazandığım disiplin ve operasyonel yaklaşım üzerine
-        inşa edilmiştir. Uluslararası saha operasyonları, proje koordinasyonu ve ticari süreçlerde
-        özellikle Fas merkezli projelerde aktif görev aldım.
-    </p>
-    <p>
-        Yerel ve uluslararası paydaşlarla yürütülen çok disiplinli projelerde planlama,
-        uygulama ve lojistik entegrasyon süreçlerini yöneterek operasyonların sürdürülebilir
-        ve güvenli şekilde tamamlanmasını sağladım.
-    </p>
-</div>
-
-<div class="section">
-    <div class="section-title">Deneyimler</div>
-
-    <div class="exp">
-        <div class="role">Uluslararası Proje Koordinatörü</div>
-        <span class="meta">Agadir | Haziran 2024 – Temmuz 2025</span>
-        <div class="desc">
-            Uluslararası prefabrik yapı ve sosyal tesis projelerinde saha koordinasyonu,
-            ekip yönetimi, tedarik süreçleri ve iş güvenliği standartlarını yönettim.
+    <!-- HERO -->
+    <div class="hero">
+        <div class="photo">
+            <img src="foto.jpg" alt="Sefa Kandemir">
+        </div>
+        <div class="hero-text">
+            <h1>Sefa Kandemir</h1>
+            <h2>INTERNATIONAL OPERATIONS · PROJECTS · TRADE & LOGISTICS</h2>
         </div>
     </div>
 
-    <div class="exp">
-        <div class="role">Uluslararası Ticaret ve Lojistik Yöneticisi</div>
-        <span class="meta">Casablanca | Kasım 2019 – Ekim 2024</span>
-        <div class="desc">
-            Kıymetli maden lojistiği, güvenli transfer operasyonları ve uluslararası
-            ticari süreçlerin yönetimini üstlendim.
+    <!-- EXPERIENCE -->
+    <div class="section">
+        <div class="section-title">Uluslararası Operasyon Deneyimi</div>
+        <div class="section-line"></div>
+
+        <div class="job">
+            <div class="job-title">Uluslararası Proje Koordinatörü</div>
+            <div class="job-meta">Agadir | Haziran 2024 – Temmuz 2025</div>
+            <div class="job-desc">
+                Uluslararası prefabrik yapı ve sosyal tesis projelerinde saha koordinasyonu,
+                ekip yönetimi, tedarik süreçleri ve iş güvenliği standartlarının uygulanmasını yönettim.
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Uluslararası Ticaret ve Lojistik Yöneticisi</div>
+            <div class="job-meta">Casablanca | Kasım 2019 – Ekim 2024</div>
+            <div class="job-desc">
+                Kıymetli maden lojistiği, güvenli transfer operasyonları ve
+                uluslararası ticaret süreçlerinin yönetiminden sorumlu oldum.
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Uluslararası Proje Koordinatörü</div>
+            <div class="job-meta">Casablanca | Kasım 2018 – Kasım 2019</div>
+            <div class="job-desc">
+                Çok disiplinli saha projelerinde uygulama,
+                taşeron koordinasyonu ve iş güvenliği süreçlerini yönettim.
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Restoran ve Operasyon Müdürü</div>
+            <div class="job-meta">Casablanca | 2012 – 2017</div>
+            <div class="job-desc">
+                Operasyonel süreç yönetimi, ekip organizasyonu ve maliyet kontrolü alanlarında
+                yöneticilik yaptım.
+            </div>
         </div>
     </div>
 
-    <div class="exp">
-        <div class="role">Uluslararası Proje Koordinatörü</div>
-        <span class="meta">Casablanca | Kasım 2018 – Kasım 2019</span>
-        <div class="desc">
-            Çok disiplinli saha projelerinde uygulama, taşeron koordinasyonu
-            ve iş güvenliği süreçlerini yönettim.
-        </div>
+    <div class="footer">
+        sefakandemir.com.tr
     </div>
-
-    <div class="exp">
-        <div class="role">Restoran ve Operasyon Müdürü</div>
-        <span class="meta">Casablanca | 2012 – 2017</span>
-        <div class="desc">
-            Operasyonel süreç yönetimi, ekip organizasyonu ve maliyet kontrolü
-            alanlarında yöneticilik yaptım.
-        </div>
-    </div>
-</div>
-
-<div class="section">
-    <div class="section-title">Çok Dilli Çalışma Yetkinliği</div>
-    <div class="tags">
-        <div class="tag">Arapça</div>
-        <div class="tag">İngilizce</div>
-        <div class="tag">Fransızca</div>
-    </div>
-</div>
-
-<div class="section">
-    <div class="section-title">Operasyonel Yetkinlikler</div>
-    <div class="tags">
-        <div class="tag">Uluslararası Proje Yönetimi</div>
-        <div class="tag">Ticaret & Lojistik</div>
-        <div class="tag">Saha Koordinasyonu</div>
-        <div class="tag">İSG Yönetimi</div>
-        <div class="tag">Çok Uluslu Ekipler</div>
-    </div>
-</div>
-
-<footer>
-© 2026 Sefa Kandemir
-</footer>
 
 </div>
 
