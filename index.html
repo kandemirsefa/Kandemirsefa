@@ -1,89 +1,108 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sefa Kandemir | Uluslararası Operasyonlar</title>
-<style>
-    /* İlerleme Çubuğu (Kum Saati Etkisi) */
-    #progress-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 6px;
-        background: #d4af37;
-        z-index: 9999;
-        transition: width 0.1s ease-out;
-        box-shadow: 0 0 10px #d4af37;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sefa Kandemir | Digital Lab</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --neon: #00f2ff;
+            --glass: rgba(20, 20, 25, 0.7);
+            --text: #e0e0e0;
+        }
 
-    body { margin: 0; font-family: 'Inter', sans-serif; background: #fdfdfd; color: #1f2937; }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    .container { max-width: 800px; margin: 0 auto; padding: 100px 40px; }
+        .grid-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
 
-    /* Fotoğraf */
-    .hero-photo {
-        width: 150px; height: 150px;
-        margin: 0 auto 30px;
-        border-radius: 50%;
-        border: 4px solid #d4af37;
-        overflow: hidden;
-    }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .container { width: 80%; max-width: 900px; margin: auto; padding: 50px 0; }
 
-    h1 { text-align: center; font-size: 2.8rem; margin-bottom: 10px; }
-    .subtitle { text-align: center; color: #b59b3a; margin-bottom: 80px; text-transform: uppercase; letter-spacing: 2px; }
+        .section-card {
+            background: var(--glass);
+            border: 1px solid var(--neon);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: 0.4s;
+        }
 
-    .section { margin-bottom: 100px; }
-    .section-title { font-size: 1.8rem; margin-bottom: 30px; border-bottom: 2px solid #d4af37; display: inline-block; }
+        .section-card:hover {
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+            transform: translateY(-5px);
+        }
 
-    .exp { margin-bottom: 50px; }
-    .role { font-weight: 700; font-size: 1.3rem; }
-    .meta { color: #d4af37; font-size: 0.9rem; margin-bottom: 10px; display: block; }
-</style>
+        h1, h2 { color: var(--neon); text-transform: uppercase; letter-spacing: 2px; }
+
+        .btn-neon {
+            background: transparent; color: var(--neon);
+            border: 1px solid var(--neon); padding: 12px 25px;
+            cursor: pointer; transition: 0.3s;
+            text-transform: uppercase; font-weight: bold;
+        }
+        .btn-neon:hover { background: var(--neon); color: #000; box-shadow: 0 0 15px var(--neon); }
+
+        #game-score { font-size: 1.5em; color: white; margin-top: 10px; }
+    </style>
 </head>
 <body>
 
-    <div id="progress-bar"></div>
+    <div class="grid-overlay"></div>
 
     <div class="container">
-        <div class="hero-photo">
-            <!-- image.png referansına göre güncellendi -->
-            <img src="IMG.jpeg.jpg" alt="Sefa Kandemir">
-        </div>
+        <header style="text-align: center; margin-bottom: 60px;">
+            <h1>Sefa Kandemir</h1>
+            <p>Hardware Test Operator | Digital Architect</p>
+        </header>
 
-        <h1>Sefa Kandemir</h1>
-        <div class="subtitle">Uluslararası Operasyonlar • Lojistik</div>
+        <!-- Modül 1: Sistem -->
+        <section class="section-card">
+            <h2>> Sistem Durumu</h2>
+            <p><strong>Hardware Test:</strong> Active (Ajax Systems Protocol)</p>
+            <p><strong>Status:</strong> Online - System Optimized</p>
+        </section>
 
-        <div class="section">
-            <div class="section-title">Uluslararası Operasyon Deneyimi</div>
-            <p>Hava kuvvetleri disiplini ve uluslararası saha operasyonlarında, Fas merkezli projelerde yüksek hassasiyet gerektiren süreçleri başarıyla yönettim.</p>
-        </div>
+        <!-- Modül 2: Projeler -->
+        <section class="section-card">
+            <h2>> Dijital Portfolyo</h2>
+            <p>Sakura Gaming, Viplox ve IronBow ekosistemleri üzerinden markalar inşa ediyorum.</p>
+            <button class="btn-neon" onclick="window.location.href='#'">Projeleri İncele</button>
+        </section>
 
-        <div class="section">
-            <div class="section-title">Deneyimler</div>
-            <div class="exp">
-                <div class="role">Uluslararası Proje Koordinatörü</div>
-                <span class="meta">Agadir | 2024 – 2025</span>
-                <p>Prefabrik yapı ve sosyal tesis projelerinde saha ve tedarik yönetimi.</p>
-            </div>
-            <div class="exp">
-                <div class="role">Uluslararası Ticaret ve Lojistik Yöneticisi</div>
-                <span class="meta">Casablanca | 2019 – 2024</span>
-                <p>Kıymetli maden lojistiği ve stratejik ticari operasyonlar.</p>
-            </div>
-        </div>
+        <!-- Modül 3: İnteraktif Oyun -->
+        <section class="section-card">
+            <h2>> Lab: Reaksiyon Testi</h2>
+            <p>Sistemin hızını ölçmek için tıkla:</p>
+            <button class="btn-neon" onclick="updateScore()">Tıkla</button>
+            <div id="game-score">Skor: 0</div>
+        </section>
+
+        <!-- Modül 4: İletişim -->
+        <section class="section-card">
+            <h2>> İletişim Terminali</h2>
+            <p>Yeni iş birlikleri için: <strong>sefa@sefakandemir.com.tr</strong></p>
+        </section>
     </div>
 
     <script>
-        // Sayfa kaydırıldıkça ilerleme çubuğunu dolduran script
-        window.onscroll = function() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("progress-bar").style.width = scrolled + "%";
-        };
+        let score = 0;
+        function updateScore() {
+            score++;
+            document.getElementById('game-score').innerText = "Skor: " + score;
+        }
     </script>
 </body>
 </html>
