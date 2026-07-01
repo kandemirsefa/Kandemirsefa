@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <meta charset="UTF-8">
+    <title>SEFA KANDEMİR</title>
     <style>
         body {
             background-color: #fdfbf7;
@@ -9,11 +11,13 @@
             font-family: 'Playfair Display', serif;
         }
 
+        /* 1. Yaprak Katmanı: En arkada (z-index: -1) */
         .leaf-layer {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1; pointer-events: none;
         }
 
+        /* 2. İçerik Katmanı: Opak arka planla yaprakları maskeler */
         .content-layer { 
             position: relative; z-index: 1; max-width: 900px; margin: auto; 
             background-color: #fdfbf7;
@@ -31,8 +35,11 @@
             border-radius: 20px;
         }
 
+        /* Altın sarısı yapraklar ve yavaş animasyon */
         .maple-leaf {
-            position: absolute; color: #d4af37; font-size: 50px;
+            position: absolute; 
+            color: #FFD700; /* Gerçek Altın Sarısı */
+            font-size: 50px;
             animation: fall linear infinite;
         }
         @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
@@ -44,15 +51,29 @@
 
     <div class="content-layer">
         <div class="header-section">
-            <img src="IMG.jpeg.jpg" class="profile-img">
+            <img src="IMG.jpeg.jpg" class="profile-img" alt="Sefa Kandemir">
             <h1>SEFA KANDEMİR</h1>
         </div>
 
         <div class="experience-card">
             <h3>Yurtdışı Proje Koordinatörü (2024 - 2026)</h3>
-            <p>Prefabrik yapı, uçak konseptli işletmeler ve aqua park projelerinde uçtan uca saha yönetimi; bütçe optimizasyonu, malzeme tedariki ve operasyonel koordinasyon[span_0](start_span)[span_0](end_span).</p>
+            <p>Prefabrik yapı, uçak konseptli işletmeler ve aqua park projelerinde uçtan uca saha yönetimi; bütçe optimizasyonu, malzeme tedariki ve operasyonel koordinasyon.</p>
         </div>
-        <!-- Diğer kartlar aynı yapıda devam edebilir -->
+
+        <div class="experience-card">
+            <h3>Yurtdışı Satış Yöneticisi (2019 - 2024)</h3>
+            <p>Değerli madenler sektöründe yönetimsel operasyonlar; kasa yönetimi, stratejik müşteri ilişkileri, piyasa analizi ve iş geliştirme projeleri.</p>
+        </div>
+        
+        <div class="experience-card">
+            <h3>Yurtdışı Proje Koordinatörü (2018 - 2019)</h3>
+            <p>Mimari projelerin saha uyum kontrolleri ve revizyon süreçleri; taşeron firmaların iş güvenliği koordinasyonu ve kalite denetimi.</p>
+        </div>
+
+        <div class="experience-card">
+            <h3>Yurtdışı Operasyon Müdürü (2012 - 2017)</h3>
+            <p>Uluslararası gastronomi sektöründe yönetim ve operasyonel süreç yönetimi; maliyet kontrolü, envanter stratejileri ve hizmet kalitesi geliştirme.</p>
+        </div>
     </div>
 
     <script>
@@ -61,13 +82,13 @@
             leaf.className = 'maple-leaf';
             leaf.innerHTML = '🍁';
             leaf.style.left = Math.random() * 100 + 'vw';
-            // Hız: Süreyi 15-20 saniyeye çıkararak çok daha yavaş süzülmelerini sağladım[span_1](start_span)[span_1](end_span)
-            leaf.style.animationDuration = Math.random() * 5 + 15 + 's';
+            // Çok yavaş süzülme (30-45 saniye)
+            leaf.style.animationDuration = Math.random() * 15 + 30 + 's';
             document.getElementById('leaf-layer').appendChild(leaf);
-            setTimeout(() => leaf.remove(), 25000);
+            setTimeout(() => leaf.remove(), 50000);
         }
-        // Sıklık: Süreyi 4000ms yaparak yaprakların çok daha seyrek düşmesini sağladım[span_2](start_span)[span_2](end_span)
-        setInterval(createMapleLeaf, 4000);
+        // Çok seyrek (8 saniyede bir yaprak)
+        setInterval(createMapleLeaf, 8000);
     </script>
 </body>
 </html>
