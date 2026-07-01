@@ -1,120 +1,131 @@
-/* Önceki temel stiller aynı kalıyor, sadece animasyonları ekliyoruz */
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sefa Kandemir | Digital Lab</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --neon: #00f2ff;
+            --glass: rgba(20, 20, 25, 0.7);
+            --text: #e0e0e0;
+        }
 
-:root {
-    --bg: #050505;
-    --neon: #00f2ff;
-    --glass: rgba(20, 20, 25, 0.7);
-    --text: #e0e0e0;
-}
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
 
-body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
+        /* HAREKETLİ IZGARA */
+        .grid-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            animation: gridMove 20s linear infinite;
+        }
 
-/* 1. HAREKETLİ ARKA PLAN (Grid Kaydırma) */
-.grid-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    z-index: -1;
-    /* Animasyon: yukarı doğru sonsuz kaydırma */
-    animation: gridMove 20s linear infinite;
-}
+        @keyframes gridMove {
+            from { background-position: 0 0; }
+            to { background-position: 0 1000px; }
+        }
 
-@keyframes gridMove {
-    from { background-position: 0 0; }
-    to { background-position: 0 1000px; } /* Dikey kaydırma mesafesi */
-}
+        .container { width: 80%; max-width: 900px; margin: auto; padding: 50px 0; }
 
-.container { width: 80%; max-width: 900px; margin: auto; padding: 50px 0; }
+        /* HAREKETLİ KARTLAR */
+        .section-card {
+            background: var(--glass);
+            border: 1px solid var(--neon);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            animation: pulseGlow 3s infinite alternate;
+            transition: 0.4s;
+        }
 
-.section-card {
-    background: var(--glass);
-    border: 1px solid var(--neon);
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden; /* Efektin taşmaması için */
-    /* 2. HAREKETLİ NEON NEFES (Glow Pulse) */
-    animation: pulseGlow 3s infinite alternate;
-}
+        @keyframes pulseGlow {
+            from { box-shadow: 0 0 5px rgba(0, 242, 255, 0.2); }
+            to { box-shadow: 0 0 25px rgba(0, 242, 255, 0.4); }
+        }
 
-@keyframes pulseGlow {
-    from { box-shadow: 0 0 5px rgba(0, 242, 255, 0.2), inset 0 0 5px rgba(0, 242, 255, 0.1); }
-    to { box-shadow: 0 0 20px rgba(0, 242, 255, 0.5), inset 0 0 10px rgba(0, 242, 255, 0.3); }
-}
+        .section-card:hover { transform: translateY(-5px); border-color: #fff; animation: none; box-shadow: 0 0 30px var(--neon); }
 
-/* Kartların hover efekti artık daha belirgin */
-.section-card:hover {
-    border-color: #fff;
-    transform: translateY(-5px);
-    animation: none; /* Hover anında nefes durur, tam parlak olur */
-    box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
-}
+        h1, h2 { color: var(--neon); text-transform: uppercase; letter-spacing: 2px; }
 
-h1, h2 {
-    color: var(--neon);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
+        /* HAREKETLİ YAZI */
+        .typing-header {
+            overflow: hidden; border-right: 3px solid var(--neon);
+            white-space: nowrap; margin: 0 auto;
+            animation: typing 3s steps(30, end), blink 0.7s infinite;
+        }
 
-/* 3. HAREKETLİ YAZI EFENDİSİ (Header için Typewriter) */
-header h1 {
-    overflow: hidden; /* Harfler sırayla gözüksün */
-    border-right: 3px solid var(--neon); /* Yanıp sönen imleç */
-    white-space: nowrap;
-    margin: 0 auto;
-    animation: typing 3.5s steps(40, end), blinkCaret 0.75s step-end infinite;
-    display: inline-block; /* Genişliği metne göre ayarla */
-}
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink { 50% { border-color: transparent } }
 
-/* Yazılma animasyonu */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
+        /* HAREKETLİ BUTON */
+        .btn-neon {
+            background: transparent; color: var(--neon);
+            border: 1px solid var(--neon); padding: 12px 25px;
+            cursor: pointer; position: relative; overflow: hidden;
+            text-transform: uppercase; font-weight: bold; transition: 0.5s;
+        }
 
-/* İmleç yanıp sönme animasyonu */
-@keyframes blinkCaret {
-    from, to { border-color: transparent; }
-    50% { border-color: var(--neon); }
-}
+        .btn-neon:hover { background: var(--neon); color: #000; box-shadow: 0 0 20px var(--neon); }
 
-/* 4. HAREKETLİ BUTON (Hover esnasında kayan ışık) */
-.btn-neon {
-    background: transparent; color: var(--neon);
-    border: 1px solid var(--neon); padding: 12px 25px;
-    cursor: pointer; transition: 0.5s;
-    text-transform: uppercase; font-weight: bold;
-    position: relative;
-    overflow: hidden;
-}
+        #game-score { font-size: 1.8em; margin-top: 15px; color: white; transition: 0.3s; }
+    </style>
+</head>
+<body>
 
-.btn-neon::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.4), transparent);
-    transition: 0.5s;
-}
+    <div class="grid-overlay"></div>
 
-.btn-neon:hover {
-    color: #000;
-    background: var(--neon);
-    box-shadow: 0 0 20px var(--neon);
-}
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 60px;">
+            <h1 class="typing-header">SEFA KANDEMİR</h1>
+            <p>Hardware Test Operator | Digital Architect</p>
+        </header>
 
-.btn-neon:hover::before {
-    left: 100%; /* Işık soldan sağa kayar */
-}
+        <section class="section-card">
+            <h2>> Sistem Durumu</h2>
+            <p>Durum: <strong>Online</strong></p>
+            <p>Ajax Systems Protokolü Aktif.</p>
+        </section>
 
-#game-score { font-size: 1.5em; color: white; margin-top: 10px; transition: 0.3s; }
+        <section class="section-card">
+            <h2>> Aktif Projeler</h2>
+            <p>Sakura Gaming, Viplox ve IronBow ekosistemleri yönetiliyor.</p>
+            <button class="btn-neon" onclick="window.location.href='https://sakuragaming.com.tr'">Projeleri İncele</button>
+        </section>
+
+        <section class="section-card">
+            <h2>> Lab: Reaksiyon Testi</h2>
+            <p>Butona hızlıca bas ve sistem hızını ölç!</p>
+            <button class="btn-neon" onclick="addScore()">Tıkla</button>
+            <div id="game-score">Skor: 0</div>
+        </section>
+
+        <section class="section-card">
+            <h2>> İletişim Terminali</h2>
+            <p>Dijital dünyada yerini al: <strong>sefa@sefakandemir.com.tr</strong></p>
+        </section>
+    </div>
+
+    <script>
+        let score = 0;
+        function addScore() {
+            score++;
+            const el = document.getElementById('game-score');
+            el.innerText = "Skor: " + score;
+            el.style.transform = "scale(1.2)";
+            setTimeout(() => el.style.transform = "scale(1)", 200);
+        }
+    </script>
+</body>
+</html>
