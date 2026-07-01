@@ -29,23 +29,25 @@
         
         /* ANİMASYON */
         .maple-leaf {
-            position: fixed;
-            top: -50px;
-            color: #d4af37;
-            font-size: 30px;
-            opacity: 0.6;
-            animation: fall linear infinite;
-            z-index: 3;
-            pointer-events: none;
+            position: fixed; top: -50px; color: #d4af37; font-size: 30px; opacity: 0.6;
+            animation: fall linear infinite; z-index: 3; pointer-events: none;
         }
         @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
 
-        /* İÇERİK */
-        .content-block { margin-bottom: 40px; }
-        h2 { color: #b8860b; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; border-bottom: 1px solid #e0dcd0; padding-bottom: 5px; }
-        h3 { font-size: 18px; color: #1a1a1a; margin: 10px 0 5px 0; }
-        p { font-size: 17px; line-height: 1.6; color: #444; margin-top: 0; }
-        .link-btn { font-size: 18px; color: #b8860b; text-decoration: underline; cursor: pointer; display: block; margin-top: 40px; font-weight: bold; }
+        /* KUTU ÇERÇEVELERİ */
+        .experience-card {
+            border: 2px solid #d4af37;
+            padding: 25px;
+            margin-bottom: 30px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .experience-card:hover { transform: scale(1.02); }
+
+        h2 { color: #b8860b; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; text-align: center; }
+        h3 { font-size: 18px; color: #1a1a1a; margin-top: 0; }
+        p { font-size: 17px; line-height: 1.6; color: #444; }
     </style>
 </head>
 <body>
@@ -69,29 +71,27 @@
             <h1>SEFA KANDEMİR</h1>
         </div>
 
-        <div class="content-block">
-            <h2>PROFESYONEL DENEYİM</h2>
-            
+        <h2>PROFESYONEL DENEYİM</h2>
+
+        <div class="experience-card">
             <h3>Yurtdışı Proje Koordinatörü (2024 - 2026)</h3>
-            <p>Prefabrik yapı, uçak konseptli işletmeler ve aqua park projelerinde uçtan uca saha yönetimi; bütçe optimizasyonu, malzeme tedariki ve uluslararası şantiye operasyonlarının koordinasyonu[span_0](start_span)[span_0](end_span).</p>
+            <p>Prefabrik yapı, uçak konseptli işletmeler ve aqua park projelerinde uçtan uca saha yönetimi; bütçe optimizasyonu, malzeme tedariki ve operasyonel koordinasyon[span_0](start_span)[span_0](end_span).</p>
+        </div>
 
+        <div class="experience-card">
             <h3>Yurtdışı Satış Yöneticisi (2019 - 2024)</h3>
-            <p>Değerli madenler ve kuyumculuk sektöründe yönetimsel operasyonlar; kasa yönetimi, stratejik müşteri ilişkileri, piyasa analizi ve satış verimliliğini artırmaya yönelik iş geliştirme[span_1](start_span)[span_1](end_span).</p>
+            <p>Değerli madenler sektöründe yönetimsel operasyonlar; kasa yönetimi, stratejik müşteri ilişkileri, piyasa analizi ve iş geliştirme projeleri[span_1](start_span)[span_1](end_span).</p>
+        </div>
 
+        <div class="experience-card">
             <h3>Yurtdışı Proje Koordinatörü (2018 - 2019)</h3>
-            <p>Mimari projelerin saha uyum kontrolleri ve revizyon süreçlerinin yönetimi; taşeron firmaların iş güvenliği koordinasyonu ve yüksek kalite standartlarının denetimi[span_2](start_span)[span_2](end_span).</p>
+            <p>Mimari projelerin saha uyum kontrolleri ve revizyon süreçleri; taşeron firmaların iş güvenliği koordinasyonu ve kalite denetimi[span_2](start_span)[span_2](end_span).</p>
+        </div>
 
+        <div class="experience-card">
             <h3>Yurtdışı Operasyon Müdürü (2012 - 2017)</h3>
-            <p>Uluslararası gastronomi sektöründe yönetim ve operasyonel süreç yönetimi; maliyet kontrolü, envanter stratejileri ve hizmet kalitesini artırmaya yönelik çalışmalar[span_3](start_span)[span_3](end_span).</p>
+            <p>Uluslararası gastronomi sektöründe yönetim ve operasyonel süreç yönetimi; maliyet kontrolü, envanter stratejileri ve hizmet kalitesi geliştirme[span_3](start_span)[span_3](end_span).</p>
         </div>
-
-        <div class="content-block">
-            <h2>YETKİNLİKLER & DİSİPLİN</h2>
-            <p>12 yıllık uluslararası saha tecrübesi; kriz yönetimi, çok dilli iletişim ve teknik liderlik[span_4](start_span)[span_4](end_span). İdari süreç yönetimi ve askeri disiplin ile operasyonel koordinasyon uzmanlığı[span_5](start_span)[span_5](end_span).</p>
-            <p style="font-size: 14px; color: #888;">• Proje Yönetimi • İş Geliştirme • Satış Yönetimi • Pazarlama Stratejisi • İdari Süreç Yönetimi[span_6](start_span)[span_6](end_span)</p>
-        </div>
-
-        <a class="link-btn">CV_DOWNLOAD.PDF</a>
     </div>
 
 </body>
