@@ -18,13 +18,13 @@
         /* 2. İçerik Katmanı: Yaprakların üzerinde (z-index: 1) */
         .content-layer { 
             position: relative; z-index: 1; max-width: 900px; margin: auto; 
-            background-color: #fdfbf7; /* Ana kapsayıcıyı opak yapıyoruz */
+            background-color: #fdfbf7;
         }
 
         .experience-card, .header-section {
-            background-color: #fdfbf7; /* Kutuların ve başlığın içi tamamen opak */
+            background-color: #fdfbf7; 
             position: relative;
-            z-index: 2; /* Kesinlikle ön planda */
+            z-index: 2;
         }
 
         .experience-card {
@@ -42,7 +42,6 @@
 </head>
 <body>
 
-    <!-- Yapraklar en arkada -->
     <div class="leaf-layer" id="leaf-layer"></div>
 
     <div class="content-layer">
@@ -55,7 +54,6 @@
             <h3>Yurtdışı Proje Koordinatörü (2024 - 2026)</h3>
             <p>...</p>
         </div>
-        <!-- Diğer kartlar -->
     </div>
 
     <script>
@@ -64,11 +62,12 @@
             leaf.className = 'maple-leaf';
             leaf.innerHTML = '🍁';
             leaf.style.left = Math.random() * 100 + 'vw';
-            leaf.style.animationDuration = Math.random() * 8 + 8 + 's';
+            leaf.style.animationDuration = Math.random() * 10 + 10 + 's';
             document.getElementById('leaf-layer').appendChild(leaf);
-            setTimeout(() => leaf.remove(), 16000);
+            setTimeout(() => leaf.remove(), 20000);
         }
-        setInterval(createMapleLeaf, 800);
+        // Yaprakların sıklığını azaltmak için süreyi 800ms'den 2500ms'ye çıkardım[span_2](start_span)[span_2](end_span)
+        setInterval(createMapleLeaf, 2500);
     </script>
 </body>
 </html>
