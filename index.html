@@ -1,304 +1,109 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEFA KANDEMİR</title>
+    <meta charset="UTF-8">
+    <title>SEFA KANDEMİR</title>
+    <style>
+        body {
+            background-color: #fdfbf7;
+            margin: 0;
+            overflow-x: hidden;
+            font-family: 'Playfair Display', serif;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+        /* Yapraklar en arkada (z-index: -1) */
+        .leaf-layer {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none;
+        }
 
-<style>
+        /* Ana içerik katmanı (Opaklık ile maskeleme yapar) */
+        .content-layer { 
+            position: relative; z-index: 1; max-width: 900px; margin: auto; 
+            background-color: #fdfbf7; padding: 60px 20px;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        .header-section { text-align: center; margin-bottom: 80px; position: relative; z-index: 2; }
+        .profile-img {
+            width: 250px; height: 250px; border-radius: 50%;
+            border: 6px solid #d4af37; box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+            margin-bottom: 30px; animation: pulse 3s infinite ease-in-out;
+        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        h1 { font-size: 85px; margin: 0; color: #1a1a1a; letter-spacing: -3px; }
 
-html{
-    background:#fdfbf7;
-}
+        .experience-card {
+            border: 3px solid #d4af37; padding: 40px; margin-bottom: 40px;
+            background-color: #fdfbf7; border-radius: 20px; position: relative; z-index: 2;
+        }
+        h3 { font-size: 28px; color: #b8860b; margin: 0 0 15px 0; }
+        p { font-size: 20px; line-height: 1.8; color: #444; margin: 0; }
 
-body{
-    background:#fdfbf7;
-    font-family:'Playfair Display', serif;
-    padding:60px 20px;
-    overflow-x:hidden;
-    position:relative;
-    min-height:100vh;
-}
-
-/* YAPRAKLAR */
-.leaf-layer{
-    position:fixed;
-    inset:0;
-    z-index:-1;
-    pointer-events:none;
-    overflow:hidden;
-}
-
-/* İÇERİK */
-.content-layer{
-    position:relative;
-    z-index:100;
-    max-width:900px;
-    margin:auto;
-}
-
-/* BAŞLIK */
-.header-section{
-    text-align:center;
-    margin-bottom:60px;
-    background:#fdfbf7;
-    position:relative;
-    z-index:101;
-}
-
-.profile-img{
-    width:200px;
-    height:200px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid #d4af37;
-    box-shadow:0 0 25px rgba(212,175,55,.35);
-}
-
-h1{
-    margin-top:20px;
-    font-size:64px;
-    color:#111;
-    line-height:1;
-}
-
-/* KARTLAR */
-.experience-card{
-    background:#fdfbf7;
-    border:3px solid #d4af37;
-    border-radius:24px;
-    padding:40px;
-    margin-bottom:35px;
-    position:relative;
-    z-index:101;
-    box-shadow:0 10px 25px rgba(0,0,0,.05);
-}
-
-.experience-card h3{
-    color:#b8860b;
-    font-size:30px;
-    margin-bottom:15px;
-}
-
-.experience-card p{
-    color:#444;
-    font-size:22px;
-    line-height:1.8;
-}
-
-/* ALTIN YAPRAK */
-.gold-leaf{
-    position:absolute;
-    opacity:.12;
-    filter:
-        drop-shadow(0 0 8px rgba(255,215,0,.6))
-        drop-shadow(0 0 20px rgba(212,175,55,.4));
-    animation:leafFall linear infinite;
-}
-
-.gold-leaf svg{
-    width:100%;
-    height:100%;
-}
-
-@keyframes leafFall{
-
-    0%{
-        transform:
-        translateY(-200px)
-        translateX(0)
-        rotate(0deg);
-    }
-
-    20%{
-        transform:
-        translateY(20vh)
-        translateX(60px)
-        rotate(70deg);
-    }
-
-    40%{
-        transform:
-        translateY(40vh)
-        translateX(-80px)
-        rotate(150deg);
-    }
-
-    60%{
-        transform:
-        translateY(60vh)
-        translateX(50px)
-        rotate(230deg);
-    }
-
-    80%{
-        transform:
-        translateY(80vh)
-        translateX(-60px)
-        rotate(300deg);
-    }
-
-    100%{
-        transform:
-        translateY(130vh)
-        translateX(30px)
-        rotate(360deg);
-    }
-
-}
-
-@media(max-width:768px){
-
-    h1{
-        font-size:42px;
-    }
-
-    .profile-img{
-        width:140px;
-        height:140px;
-    }
-
-    .experience-card{
-        padding:25px;
-    }
-
-    .experience-card h3{
-        font-size:22px;
-    }
-
-    .experience-card p{
-        font-size:17px;
-    }
-
-}
-
-</style>
+        .maple-leaf {
+            position: absolute; color: #FFD700; font-size: 50px;
+            animation: fall linear infinite;
+        }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+    </style>
 </head>
 <body>
 
-<div class="leaf-layer" id="leaf-layer"></div>
+    <div class="leaf-layer" id="leaf-layer"></div>
 
-<div class="content-layer">
+    <div class="content-layer">
+        <div class="header-section">
+            <img src="IMG.jpeg.jpg" class="profile-img" alt="Sefa Kandemir">
+            <h1>SEFA KANDEMİR</h1>
+        </div>
 
-    <div class="header-section">
+        <div class="experience-card">
+            <h3>Yurtdışı Proje Koordinatörü (2024 - 2026)</h3>
+            <p>Prefabrik yapı, uçak konseptli işletmeler ve aqua park projelerinde uçtan uca saha yönetimi; bütçe optimizasyonu, malzeme tedariki ve operasyonel koordinasyon.</p>
+        </div>
 
-        <img src="IMG.jpeg.jpg"
-             class="profile-img"
-             alt="Sefa Kandemir">
+        <div class="experience-card">
+            <h3>Yurtdışı Satış Yöneticisi (2019 - 2024)</h3>
+            <p>Değerli madenler sektöründe yönetimsel operasyonlar; kasa yönetimi, stratejik müşteri ilişkileri, piyasa analizi ve iş geliştirme projeleri.</p>
+        </div>
+        
+        <div class="experience-card">
+            <h3>Yurtdışı Proje Koordinatörü (2018 - 2019)</h3>
+            <p>Mimari projelerin saha uyum kontrolleri ve revizyon süreçleri; taşeron firmaların iş güvenliği koordinasyonu ve kalite denetimi.</p>
+        </div>
 
-        <h1>
-            SEFA<br>
-            KANDEMİR
-        </h1>
-
+        <div class="experience-card">
+            <h3>Yurtdışı Operasyon Müdürü (2012 - 2017)</h3>
+            <p>Uluslararası gastronomi sektöründe yönetim ve operasyonel süreç yönetimi; maliyet kontrolü, envanter stratejileri ve hizmet kalitesi geliştirme.</p>
+        </div>
     </div>
 
-    <div class="experience-card">
-        <h3>Yurtdışı Proje Koordinatörü (2024 - 2026)</h3>
-        <p>
-            Prefabrik yapı, uçak konseptli işletmeler ve aqua park projelerinde
-            uçtan uca saha yönetimi; bütçe optimizasyonu, malzeme tedariki ve
-            operasyonel koordinasyon.
-        </p>
-    </div>
+    <!-- FOOTER -->
+    <footer style="background-color: #1a1a1a; color: #ffffff; padding: 40px 20px; font-family: sans-serif;">
+        <div style="max-width: 900px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 14px;">
+            <div>
+                <p>Yardım</p><p>İade ve Değişim</p><p>Sipariş Takibi</p>
+            </div>
+            <div>
+                <p>İletişim</p><p>Mağaza Bul</p><p>Beden Tablosu</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px; border-top: 1px solid #444; padding-top: 20px;">
+            <span>🇹🇷 Türkiye</span>
+            <p style="font-size: 12px; color: #666;">© 2026 Sefa Kandemir Türkiye</p>
+        </div>
+    </footer>
 
-    <div class="experience-card">
-        <h3>Yurtdışı Satış Yöneticisi (2019 - 2024)</h3>
-        <p>
-            Değerli madenler sektöründe yönetimsel operasyonlar; kasa yönetimi,
-            stratejik müşteri ilişkileri, piyasa analizi ve iş geliştirme projeleri.
-        </p>
-    </div>
-
-    <div class="experience-card">
-        <h3>Yurtdışı Proje Koordinatörü (2018 - 2019)</h3>
-        <p>
-            Mimari projelerin saha uyum kontrolleri ve revizyon süreçleri;
-            taşeron firmaların iş güvenliği koordinasyonu ve kalite denetimi.
-        </p>
-    </div>
-
-    <div class="experience-card">
-        <h3>Yurtdışı Operasyon Müdürü (2012 - 2017)</h3>
-        <p>
-            Uluslararası gastronomi sektöründe yönetim ve operasyonel süreç
-            yönetimi; maliyet kontrolü, envanter stratejileri ve hizmet kalitesi geliştirme.
-        </p>
-    </div>
-
-</div>
-
-<script>
-
-const svgLeaf = `
-<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-<path fill="#D4AF37"
-d="M31.8 4
-L38 16
-L51 10
-L47 24
-L61 26
-L50 35
-L60 48
-L45 47
-L43 60
-L32 51
-L21 60
-L19 47
-L4 48
-L14 35
-L3 26
-L17 24
-L13 10
-L26 16
-Z"/>
-</svg>
-`;
-
-const leafLayer = document.getElementById("leaf-layer");
-
-function createLeaf(){
-
-    const leaf = document.createElement("div");
-
-    leaf.className = "gold-leaf";
-    leaf.innerHTML = svgLeaf;
-
-    const size = 25 + Math.random()*35;
-
-    leaf.style.width = size + "px";
-    leaf.style.height = size + "px";
-
-    leaf.style.left = Math.random()*100 + "vw";
-
-    /* 2-4 dakika arası düşüş */
-    leaf.style.animationDuration =
-        (120 + Math.random()*120) + "s";
-
-    leafLayer.appendChild(leaf);
-
-    setTimeout(()=>{
-        leaf.remove();
-    },250000);
-}
-
-/* Başlangıç */
-for(let i=0;i<6;i++){
-    setTimeout(createLeaf,i*4000);
-}
-
-/* Yeni yaprak */
-setInterval(createLeaf,20000);
-
-</script>
-
+    <script>
+        function createMapleLeaf() {
+            const leaf = document.createElement('div');
+            leaf.className = 'maple-leaf';
+            leaf.innerHTML = '🍁';
+            leaf.style.left = Math.random() * 100 + 'vw';
+            leaf.style.animationDuration = Math.random() * 15 + 30 + 's';
+            document.getElementById('leaf-layer').appendChild(leaf);
+            setTimeout(() => leaf.remove(), 50000);
+        }
+        setInterval(createMapleLeaf, 8000);
+    </script>
 </body>
 </html>
