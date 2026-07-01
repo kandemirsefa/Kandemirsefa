@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>SEFA KANDEMİR</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,66 +17,61 @@
 
 body{
     background:#fdfbf7;
-    font-family:'Playfair Display',serif;
+    font-family:'Playfair Display', serif;
     padding:60px 20px;
     overflow-x:hidden;
     position:relative;
 }
 
-/* Yapraklar */
+/* YAPRAKLAR EN ALTTA */
 .leaf-layer{
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    inset:0;
     z-index:0;
+    overflow:hidden;
     pointer-events:none;
 }
 
-/* İçerik */
+/* TÜM İÇERİK YAPRAKLARIN ÜSTÜNDE */
 .content-layer{
     position:relative;
-    z-index:10;
+    z-index:100;
     max-width:900px;
     margin:auto;
 }
 
-/* Başlık */
+/* BAŞLIK */
 .header-section{
     text-align:center;
     margin-bottom:60px;
-    position:relative;
-    z-index:11;
     background:#fdfbf7;
 }
 
 .profile-img{
     width:180px;
     height:180px;
-    object-fit:cover;
     border-radius:50%;
+    object-fit:cover;
     border:5px solid #d4af37;
-    box-shadow:0 0 25px rgba(212,175,55,.4);
+    box-shadow:0 0 25px rgba(212,175,55,.35);
 }
 
 h1{
     margin-top:20px;
     font-size:70px;
-    color:#111;
     line-height:1;
+    color:#111;
 }
 
-/* Kartlar */
+/* KARTLAR */
 .experience-card{
-    position:relative;
-    z-index:11;
     background:#fdfbf7;
     border:3px solid #d4af37;
     border-radius:22px;
-    padding:35px;
+    padding:40px;
     margin-bottom:35px;
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
+    box-shadow:0 6px 18px rgba(0,0,0,.04);
+    position:relative;
 }
 
 .experience-card h3{
@@ -92,28 +86,55 @@ h1{
     line-height:1.8;
 }
 
-/* Altın Yaprak */
-.maple-leaf{
+/* ALTIN YAPRAKLAR */
+.gold-leaf{
     position:absolute;
-    font-size:40px;
-    opacity:.35;
-    animation:fall linear infinite;
+    opacity:.22;
+    animation:leafFall linear infinite;
     filter:
-        drop-shadow(0 0 5px rgba(255,215,0,.8))
-        drop-shadow(0 0 15px rgba(212,175,55,.6));
+    drop-shadow(0 0 5px rgba(255,215,0,.8))
+    drop-shadow(0 0 15px rgba(212,175,55,.5));
 }
 
-@keyframes fall{
+.gold-leaf svg{
+    width:100%;
+    height:100%;
+}
+
+@keyframes leafFall{
 
     0%{
         transform:
-        translateY(-100px)
+        translateY(-120px)
+        translateX(0)
         rotate(0deg);
+    }
+
+    25%{
+        transform:
+        translateY(25vh)
+        translateX(40px)
+        rotate(90deg);
+    }
+
+    50%{
+        transform:
+        translateY(50vh)
+        translateX(-40px)
+        rotate(180deg);
+    }
+
+    75%{
+        transform:
+        translateY(75vh)
+        translateX(30px)
+        rotate(270deg);
     }
 
     100%{
         transform:
-        translateY(110vh)
+        translateY(120vh)
+        translateX(-20px)
         rotate(360deg);
     }
 }
@@ -121,12 +142,16 @@ h1{
 @media(max-width:768px){
 
     h1{
-        font-size:40px;
+        font-size:46px;
     }
 
     .profile-img{
-        width:130px;
-        height:130px;
+        width:140px;
+        height:140px;
+    }
+
+    .experience-card{
+        padding:25px;
     }
 
     .experience-card h3{
@@ -136,7 +161,6 @@ h1{
     .experience-card p{
         font-size:18px;
     }
-
 }
 
 </style>
@@ -144,21 +168,18 @@ h1{
 
 <body>
 
+<!-- ALTIN YAPRAK KATMANI -->
 <div class="leaf-layer" id="leaf-layer"></div>
 
 <div class="content-layer">
 
     <div class="header-section">
-
-        <img src="IMG.jpeg.jpg"
-             class="profile-img"
-             alt="Sefa Kandemir">
+        <img src="IMG.jpeg.jpg" class="profile-img" alt="Sefa Kandemir">
 
         <h1>
             SEFA<br>
             KANDEMİR
         </h1>
-
     </div>
 
     <div class="experience-card">
@@ -173,9 +194,8 @@ h1{
     <div class="experience-card">
         <h3>Yurtdışı Satış Yöneticisi (2019 - 2024)</h3>
         <p>
-            Değerli madenler sektöründe yönetimsel operasyonlar;
-            kasa yönetimi, stratejik müşteri ilişkileri,
-            piyasa analizi ve iş geliştirme projeleri.
+            Değerli madenler sektöründe yönetimsel operasyonlar; kasa yönetimi,
+            stratejik müşteri ilişkileri, piyasa analizi ve iş geliştirme projeleri.
         </p>
     </div>
 
@@ -183,8 +203,7 @@ h1{
         <h3>Yurtdışı Proje Koordinatörü (2018 - 2019)</h3>
         <p>
             Mimari projelerin saha uyum kontrolleri ve revizyon süreçleri;
-            taşeron firmaların iş güvenliği koordinasyonu
-            ve kalite denetimi.
+            taşeron firmaların iş güvenliği koordinasyonu ve kalite denetimi.
         </p>
     </div>
 
@@ -202,41 +221,63 @@ h1{
 
 const leafLayer = document.getElementById("leaf-layer");
 
-function createMapleLeaf(){
+const svgLeaf = `
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<path fill="#D4AF37"
+d="M31.8 4
+L38 16
+L51 10
+L47 24
+L61 26
+L50 35
+L60 48
+L45 47
+L43 60
+L32 51
+L21 60
+L19 47
+L4 48
+L14 35
+L3 26
+L17 24
+L13 10
+L26 16
+Z"/>
+</svg>
+`;
 
-    const leaf = document.createElement("div");
+function createLeaf(){
 
-    leaf.classList.add("maple-leaf");
+    const leaf=document.createElement("div");
 
-    const leaves = [
-        "🍁",
-        "🍂"
-    ];
+    leaf.className="gold-leaf";
 
-    leaf.innerHTML =
-        leaves[Math.floor(Math.random()*leaves.length)];
+    leaf.innerHTML=svgLeaf;
 
-    leaf.style.left =
-        Math.random()*100 + "vw";
+    leaf.style.left=Math.random()*100+"vw";
 
-    leaf.style.animationDuration =
-        (30 + Math.random()*20) + "s";
+    const size=25+Math.random()*45;
 
-    leaf.style.fontSize =
-        (25 + Math.random()*25) + "px";
+    leaf.style.width=size+"px";
+    leaf.style.height=size+"px";
+
+    leaf.style.animationDuration=
+    (35+Math.random()*20)+"s";
 
     leafLayer.appendChild(leaf);
 
     setTimeout(()=>{
         leaf.remove();
-    },50000);
+    },60000);
 }
 
-for(let i=0;i<10;i++){
-    setTimeout(createMapleLeaf,i*1500);
+/* İlk yapraklar */
+for(let i=0;i<15;i++){
+    setTimeout(createLeaf,i*1200);
 }
 
-setInterval(createMapleLeaf,4000);
+/* Sürekli yeni yaprak */
+setInterval(createLeaf,5000);
 
 </script>
 
