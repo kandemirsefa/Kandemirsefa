@@ -11,13 +11,11 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Yapraklar en arkada (z-index: -1) */
         .leaf-layer {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1; pointer-events: none;
         }
 
-        /* Ana içerik katmanı (Opaklık ile maskeleme yapar) */
         .content-layer { 
             position: relative; z-index: 1; max-width: 900px; margin: auto; 
             background-color: #fdfbf7; padding: 60px 20px;
@@ -44,6 +42,27 @@
             animation: fall linear infinite;
         }
         @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+
+        /* FOOTER TASARIMI */
+        .site-footer {
+            background-color: #000;
+            color: #fff;
+            padding: 60px 20px;
+            font-family: sans-serif;
+            margin-top: 100px;
+        }
+        .footer-grid {
+            max-width: 900px; margin: auto;
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;
+        }
+        .footer-link {
+            color: #fff; text-decoration: none; display: block; margin-bottom: 15px; font-size: 14px;
+        }
+        .footer-bottom {
+            max-width: 900px; margin: 40px auto 0;
+            border-top: 1px solid #333; padding-top: 30px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -70,26 +89,29 @@
             <h3>Yurtdışı Proje Koordinatörü (2018 - 2019)</h3>
             <p>Mimari projelerin saha uyum kontrolleri ve revizyon süreçleri; taşeron firmaların iş güvenliği koordinasyonu ve kalite denetimi.</p>
         </div>
-
-        <div class="experience-card">
-            <h3>Yurtdışı Operasyon Müdürü (2012 - 2017)</h3>
-            <p>Uluslararası gastronomi sektöründe yönetim ve operasyonel süreç yönetimi; maliyet kontrolü, envanter stratejileri ve hizmet kalitesi geliştirme.</p>
-        </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer style="background-color: #1a1a1a; color: #ffffff; padding: 40px 20px; font-family: sans-serif;">
-        <div style="max-width: 900px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 14px;">
+    <!-- GÜNCELLENMİŞ PROFESYONEL FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
             <div>
-                <p>Yardım</p><p>İade ve Değişim</p><p>Sipariş Takibi</p>
+                <a href="#" class="footer-link">Yardım & Destek</a>
+                <a href="#" class="footer-link">İade ve Değişim</a>
+                <a href="#" class="footer-link">Sipariş Takibi</a>
+                <a href="#" class="footer-link">İletişim</a>
             </div>
             <div>
-                <p>İletişim</p><p>Mağaza Bul</p><p>Beden Tablosu</p>
+                <a href="#" class="footer-link">Hakkımızda</a>
+                <a href="#" class="footer-link">Mağaza Bul</a>
+                <a href="#" class="footer-link">Kullanım Koşulları</a>
+                <a href="#" class="footer-link">Gizlilik Politikası</a>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 40px; border-top: 1px solid #444; padding-top: 20px;">
-            <span>🇹🇷 Türkiye</span>
-            <p style="font-size: 12px; color: #666;">© 2026 Sefa Kandemir Türkiye</p>
+        <div class="footer-bottom">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span>🇹🇷</span> <span>Türkiye</span>
+            </div>
+            <p style="font-size: 12px; color: #888;">© 2026 Sefa Kandemir, Inc.</p>
         </div>
     </footer>
 
