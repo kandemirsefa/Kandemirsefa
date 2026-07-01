@@ -13,9 +13,18 @@
             padding: 80px 40px;
         }
 
-        .container { max-width: 800px; }
+        .container { max-width: 800px; margin: auto; }
 
-        /* Animasyonlu Sınıf */
+        /* Fotoğraf Stili */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            border: 2px solid #333;
+        }
+
         .fade-up {
             opacity: 0;
             transform: translateY(30px);
@@ -26,46 +35,36 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        h1 {
-            font-size: 80px;
-            font-weight: 700;
-            line-height: 0.9;
-            margin-bottom: 60px;
-            letter-spacing: -2px;
-            animation-delay: 0.2s; /* Hafif gecikme ile giriş */
-        }
+        h1 { font-size: 70px; font-weight: 700; line-height: 0.9; margin-bottom: 40px; letter-spacing: -2px; }
 
         .content-block { margin-bottom: 60px; animation-delay: 0.4s; }
-        
         h2 { font-size: 14px; text-transform: uppercase; color: #666; margin-bottom: 20px; letter-spacing: 2px; }
+        p { font-size: 22px; max-width: 600px; line-height: 1.5; color: #ccc; }
 
-        p { font-size: 24px; max-width: 600px; line-height: 1.4; color: #ccc; }
-
-        .link-btn {
-            font-size: 24px; color: #fff; text-decoration: underline;
-            cursor: pointer; display: block; margin-top: 40px;
-            transition: color 0.3s;
-        }
+        .link-btn { font-size: 20px; color: #fff; text-decoration: underline; cursor: pointer; display: block; margin-top: 40px; transition: color 0.3s; }
         .link-btn:hover { color: #888; }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <!-- Dosyalarındaki IMG.jpeg.jpg ismini kullanarak fotoğrafı çağırdım -->
+        <img src="IMG.jpeg.jpg" alt="Sefa Kandemir" class="profile-img fade-up">
+        
         <h1 class="fade-up">SEFA<br>KANDEMİR</h1>
 
         <div class="content-block fade-up">
-            <h2>Hakkında</h2>
-            <p>12 yılı aşkın deneyimle, uluslararası saha operasyonları ve donanım entegrasyonu süreçlerini yöneten operasyon stratejisti.</p>
+            <h2>OPERASYON & STRATEJİ</h2>
+            <p>12 yılı aşkın uluslararası deneyimle; lojistik optimizasyonu, saha operasyonları ve kriz yönetimi süreçlerine stratejik liderlik ediyorum.</p>
         </div>
 
         <div class="content-block fade-up">
-            <h2>Uzmanlık</h2>
-            <p>Sistem mimarisi, lojistik optimizasyon, kriz yönetimi ve donanım test süreçleri.</p>
+            <h2>TEKNİK YETKİNLİK</h2>
+            <p>Ajax Systems bünyesindeki donanım test süreçleri, sistem mimarisi ve yazılım entegrasyonu konularında mühendislik disipliniyle çözümler geliştiriyorum.</p>
         </div>
 
         <div class="content-block fade-up">
-            <h2>İletişim</h2>
+            <h2>İLETİŞİM</h2>
             <a class="link-btn">CV_DOWNLOAD.PDF</a>
         </div>
     </div>
