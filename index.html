@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
     <style>
         body {
             background-color: #fdfbf7;
@@ -10,22 +9,28 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* 1. Yaprak Katmanı: Tüm kutuların arkasında (z-index: 1) */
+        /* 1. Yaprak Katmanı: En arkada (z-index: -1) */
         .leaf-layer {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1; pointer-events: none;
+            z-index: -1; pointer-events: none;
         }
 
-        /* 2. İçerik Katmanı: Yaprakların üzerinde (z-index: 2) */
-        .content-layer { position: relative; z-index: 2; max-width: 900px; margin: auto; }
+        /* 2. İçerik Katmanı: Yaprakların üzerinde (z-index: 1) */
+        .content-layer { 
+            position: relative; z-index: 1; max-width: 900px; margin: auto; 
+            background-color: #fdfbf7; /* Ana kapsayıcıyı opak yapıyoruz */
+        }
+
+        .experience-card, .header-section {
+            background-color: #fdfbf7; /* Kutuların ve başlığın içi tamamen opak */
+            position: relative;
+            z-index: 2; /* Kesinlikle ön planda */
+        }
 
         .experience-card {
             border: 3px solid #d4af37;
             padding: 40px; margin-bottom: 40px;
-            /* ÖNEMLİ: Arka planı düz renk (opak) yapıyoruz ki yaprakları maskelesin */
-            background-color: #fdfbf7; 
             border-radius: 20px;
-            position: relative;
         }
 
         .maple-leaf {
@@ -37,10 +42,15 @@
 </head>
 <body>
 
+    <!-- Yapraklar en arkada -->
     <div class="leaf-layer" id="leaf-layer"></div>
 
     <div class="content-layer">
-        <!-- Buraya kartlarını ekle -->
+        <div class="header-section">
+            <img src="IMG.jpeg.jpg" class="profile-img">
+            <h1>SEFA KANDEMİR</h1>
+        </div>
+
         <div class="experience-card">
             <h3>Yurtdışı Proje Koordinatörü (2024 - 2026)</h3>
             <p>...</p>
