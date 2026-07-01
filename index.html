@@ -2,63 +2,88 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>SEFA KANDEMİR | OPERATIONS & STRATEGY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sefa Kandemir</title>
     <style>
-        :root { --bg: #0a0a0a; --accent: #ffb400; --text: #e0e0e0; }
-        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; padding: 40px; }
-        
-        .container { max-width: 900px; margin: auto; }
-        .header { border-bottom: 2px solid var(--accent); padding-bottom: 20px; margin-bottom: 40px; }
-        h1 { font-size: 2.5em; margin: 0; color: #fff; text-transform: uppercase; }
-        .subtitle { color: var(--accent); font-weight: bold; letter-spacing: 1px; }
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
 
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .card { background: #121212; border: 1px solid #333; padding: 25px; }
-        .full-width { grid-column: span 2; }
-        
-        h3 { color: var(--accent); margin-top: 0; font-size: 0.9em; text-transform: uppercase; }
-        .btn-cv { background: var(--accent); color: #000; padding: 12px 25px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; }
-        
-        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } .full-width { grid-column: span 1; } }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #ffb400;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .card {
+            border: 1px solid #333;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #ffb400;
+            font-size: 14px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            border: 1px solid #ffb400;
+            color: #ffb400;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 12px;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
+    <div class="container">
         <h1>SEFA KANDEMİR</h1>
-        <p class="subtitle">PROJECT COORDINATION & HARDWARE INTEGRATION</p>
+        <span class="subtitle">• PROJECT COORDINATION & HARDWARE INTEGRATION</span>
+
+        <div class="card">
+            <h3>VAKA ANALİZİ: 12+ YIL</h3>
+            <p>Uluslararası saha operasyonları, lojistik optimizasyon ve kriz anlarında stratejik karar alma mekanizmaları.</p>
+        </div>
+
+        <div class="card">
+            <h3>SİSTEM MİMARİSİ</h3>
+            <p>Donanım testi (Ajax Systems), bütçe kontrolü ve karmaşık operasyonel süreçlerin yönetimi.</p>
+        </div>
+
+        <div class="card">
+            <h3>İLETİŞİM PROTOKOLÜ</h3>
+            <p>İş birliği ve profesyonel ağ için doğrudan erişim:</p>
+            <a href="#" class="btn">CV_DOWNLOAD.pdf</a>
+        </div>
     </div>
-
-    <div class="grid">
-        <!-- Vaka Analizi -->
-        <section class="card">
-            <h3>Vaka Analizi (12+ Yıl)</h3>
-            <p>Uluslararası inşaat ve lojistik projelerinde saha operasyon yönetimi, kriz çözme ve bütçe optimizasyonu.</p>
-        </section>
-
-        <!-- Sistem Mimarisi -->
-        <section class="card">
-            <h3>Sistem Mimarisi</h3>
-            <p>Ajax Systems bünyesinde donanım test süreçleri, ana kart yazılım analizi ve teknik hata ayıklama.</p>
-        </section>
-
-        <!-- Yeni Eklenen Bölüm: Deneyim Akışı -->
-        <section class="card full-width">
-            <h3>Operasyonel Yetkinlikler</h3>
-            <p>• <strong>Stratejik Planlama:</strong> Büyük ölçekli projelerde bütçe ve lojistik yönetimi.</p>
-            <p>• <strong>Kriz Yönetimi:</strong> Beklenmedik saha sorunlarına hızlı ve efektif çözümler.</p>
-            <p>• <strong>Teknik Entegrasyon:</strong> Hardware Test süreçlerinde donanım-yazılım senkronizasyonu.</p>
-        </section>
-
-        <!-- İletişim Protokolü -->
-        <section class="card full-width">
-            <h3>İletişim Protokolü</h3>
-            <p>Profesyonel iş birliği talepleriniz için cv.pdf dosyasını inceleyebilirsiniz.</p>
-            <button class="btn-cv">CV_DOWNLOAD.PDF</button>
-        </section>
-    </div>
-</div>
 
 </body>
 </html>
