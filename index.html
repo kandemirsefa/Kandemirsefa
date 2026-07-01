@@ -15,24 +15,29 @@
     box-sizing:border-box;
 }
 
+html{
+    background:#fdfbf7;
+}
+
 body{
     background:#fdfbf7;
     font-family:'Playfair Display', serif;
     padding:60px 20px;
     overflow-x:hidden;
     position:relative;
+    min-height:100vh;
 }
 
-/* YAPRAKLAR EN ALTTA */
+/* YAPRAKLAR */
 .leaf-layer{
     position:fixed;
     inset:0;
-    z-index:0;
-    overflow:hidden;
+    z-index:-1;
     pointer-events:none;
+    overflow:hidden;
 }
 
-/* TÜM İÇERİK YAPRAKLARIN ÜSTÜNDE */
+/* İÇERİK */
 .content-layer{
     position:relative;
     z-index:100;
@@ -45,11 +50,13 @@ body{
     text-align:center;
     margin-bottom:60px;
     background:#fdfbf7;
+    position:relative;
+    z-index:101;
 }
 
 .profile-img{
-    width:180px;
-    height:180px;
+    width:200px;
+    height:200px;
     border-radius:50%;
     object-fit:cover;
     border:5px solid #d4af37;
@@ -58,42 +65,43 @@ body{
 
 h1{
     margin-top:20px;
-    font-size:70px;
-    line-height:1;
+    font-size:64px;
     color:#111;
+    line-height:1;
 }
 
 /* KARTLAR */
 .experience-card{
     background:#fdfbf7;
     border:3px solid #d4af37;
-    border-radius:22px;
+    border-radius:24px;
     padding:40px;
     margin-bottom:35px;
-    box-shadow:0 6px 18px rgba(0,0,0,.04);
     position:relative;
+    z-index:101;
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 
 .experience-card h3{
     color:#b8860b;
+    font-size:30px;
     margin-bottom:15px;
-    font-size:32px;
 }
 
 .experience-card p{
     color:#444;
-    font-size:25px;
+    font-size:22px;
     line-height:1.8;
 }
 
-/* ALTIN YAPRAKLAR */
+/* ALTIN YAPRAK */
 .gold-leaf{
     position:absolute;
-    opacity:.22;
-    animation:leafFall linear infinite;
+    opacity:.12;
     filter:
-    drop-shadow(0 0 5px rgba(255,215,0,.8))
-    drop-shadow(0 0 15px rgba(212,175,55,.5));
+        drop-shadow(0 0 8px rgba(255,215,0,.6))
+        drop-shadow(0 0 20px rgba(212,175,55,.4));
+    animation:leafFall linear infinite;
 }
 
 .gold-leaf svg{
@@ -105,44 +113,52 @@ h1{
 
     0%{
         transform:
-        translateY(-120px)
+        translateY(-200px)
         translateX(0)
         rotate(0deg);
     }
 
-    25%{
+    20%{
         transform:
-        translateY(25vh)
-        translateX(40px)
-        rotate(90deg);
+        translateY(20vh)
+        translateX(60px)
+        rotate(70deg);
     }
 
-    50%{
+    40%{
         transform:
-        translateY(50vh)
-        translateX(-40px)
-        rotate(180deg);
+        translateY(40vh)
+        translateX(-80px)
+        rotate(150deg);
     }
 
-    75%{
+    60%{
         transform:
-        translateY(75vh)
-        translateX(30px)
-        rotate(270deg);
+        translateY(60vh)
+        translateX(50px)
+        rotate(230deg);
+    }
+
+    80%{
+        transform:
+        translateY(80vh)
+        translateX(-60px)
+        rotate(300deg);
     }
 
     100%{
         transform:
-        translateY(120vh)
-        translateX(-20px)
+        translateY(130vh)
+        translateX(30px)
         rotate(360deg);
     }
+
 }
 
 @media(max-width:768px){
 
     h1{
-        font-size:46px;
+        font-size:42px;
     }
 
     .profile-img{
@@ -159,27 +175,30 @@ h1{
     }
 
     .experience-card p{
-        font-size:18px;
+        font-size:17px;
     }
+
 }
 
 </style>
 </head>
-
 <body>
 
-<!-- ALTIN YAPRAK KATMANI -->
 <div class="leaf-layer" id="leaf-layer"></div>
 
 <div class="content-layer">
 
     <div class="header-section">
-        <img src="IMG.jpeg.jpg" class="profile-img" alt="Sefa Kandemir">
+
+        <img src="IMG.jpeg.jpg"
+             class="profile-img"
+             alt="Sefa Kandemir">
 
         <h1>
             SEFA<br>
             KANDEMİR
         </h1>
+
     </div>
 
     <div class="experience-card">
@@ -219,8 +238,6 @@ h1{
 
 <script>
 
-const leafLayer = document.getElementById("leaf-layer");
-
 const svgLeaf = `
 <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
 <path fill="#D4AF37"
@@ -246,38 +263,40 @@ Z"/>
 </svg>
 `;
 
+const leafLayer = document.getElementById("leaf-layer");
+
 function createLeaf(){
 
-    const leaf=document.createElement("div");
+    const leaf = document.createElement("div");
 
-    leaf.className="gold-leaf";
+    leaf.className = "gold-leaf";
+    leaf.innerHTML = svgLeaf;
 
-    leaf.innerHTML=svgLeaf;
+    const size = 25 + Math.random()*35;
 
-    leaf.style.left=Math.random()*100+"vw";
+    leaf.style.width = size + "px";
+    leaf.style.height = size + "px";
 
-    const size=25+Math.random()*45;
+    leaf.style.left = Math.random()*100 + "vw";
 
-    leaf.style.width=size+"px";
-    leaf.style.height=size+"px";
-
-    leaf.style.animationDuration=
-    (35+Math.random()*20)+"s";
+    /* 2-4 dakika arası düşüş */
+    leaf.style.animationDuration =
+        (120 + Math.random()*120) + "s";
 
     leafLayer.appendChild(leaf);
 
     setTimeout(()=>{
         leaf.remove();
-    },60000);
+    },250000);
 }
 
-/* İlk yapraklar */
-for(let i=0;i<15;i++){
-    setTimeout(createLeaf,i*1200);
+/* Başlangıç */
+for(let i=0;i<6;i++){
+    setTimeout(createLeaf,i*4000);
 }
 
-/* Sürekli yeni yaprak */
-setInterval(createLeaf,5000);
+/* Yeni yaprak */
+setInterval(createLeaf,20000);
 
 </script>
 
