@@ -1,94 +1,230 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>SEFA KANDEMİR</title>
-    <style>
-        body {
-            background-color: #fdfbf7;
-            margin: 0; padding: 60px 20px;
-            overflow-x: hidden;
-            font-family: 'Playfair Display', serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEFA KANDEMİR</title>
 
-        /* 1. Yaprak Katmanı: En arkada (z-index: -1) */
-        .leaf-layer {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1; pointer-events: none;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
-        /* 2. İçerik Katmanı: Opak arka planla yaprakları maskeler */
-        .content-layer { 
-            position: relative; z-index: 1; max-width: 900px; margin: auto; 
-            background-color: #fdfbf7;
-        }
+<style>
 
-        .experience-card, .header-section {
-            background-color: #fdfbf7; 
-            position: relative;
-            z-index: 2;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .experience-card {
-            border: 3px solid #d4af37;
-            padding: 40px; margin-bottom: 40px;
-            border-radius: 20px;
-        }
+body{
+    background:#fdfbf7;
+    font-family:'Playfair Display',serif;
+    overflow-x:hidden;
+    position:relative;
+    padding:60px 20px;
+}
 
-        /* Altın sarısı yapraklar ve yavaş animasyon */
-        .maple-leaf {
-            position: absolute; 
-            color: #FFD700; /* Gerçek Altın Sarısı */
-            font-size: 50px;
-            animation: fall linear infinite;
-        }
-        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
-    </style>
+/* Yaprak Katmanı */
+.leaf-layer{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+}
+
+/* İçerik Katmanı */
+.content-layer{
+    position:relative;
+    z-index:10;
+    max-width:900px;
+    margin:auto;
+}
+
+/* Header */
+.header-section{
+    text-align:center;
+    margin-bottom:60px;
+    background:#fdfbf7;
+}
+
+.profile-img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #d4af37;
+    box-shadow:0 0 25px rgba(212,175,55,.3);
+    margin-bottom:25px;
+}
+
+h1{
+    font-size:60px;
+    font-weight:700;
+    color:#222;
+    line-height:1.1;
+}
+
+/* Kartlar */
+.experience-card{
+    background:#fdfbf7;
+    border:3px solid #d4af37;
+    border-radius:20px;
+    padding:40px;
+    margin-bottom:40px;
+    position:relative;
+    z-index:11;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+
+.experience-card h3{
+    color:#b38b15;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.experience-card p{
+    color:#444;
+    font-size:24px;
+    line-height:1.8;
+}
+
+/* Altın Yaprak */
+.maple-leaf{
+    position:absolute;
+    width:42px;
+    height:42px;
+    opacity:.85;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:
+        translateY(-80px)
+        rotate(0deg);
+    }
+
+    to{
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+    }
+}
+
+/* Mobil */
+@media(max-width:768px){
+
+    h1{
+        font-size:34px;
+    }
+
+    .profile-img{
+        width:130px;
+        height:130px;
+    }
+
+    .experience-card{
+        padding:28px;
+    }
+
+    .experience-card h3{
+        font-size:22px;
+    }
+
+    .experience-card p{
+        font-size:18px;
+    }
+
+}
+
+</style>
 </head>
 <body>
 
-    <div class="leaf-layer" id="leaf-layer"></div>
+<!-- Yapraklar -->
+<div class="leaf-layer" id="leaf-layer"></div>
 
-    <div class="content-layer">
-        <div class="header-section">
-            <img src="IMG.jpeg.jpg" class="profile-img" alt="Sefa Kandemir">
-            <h1>SEFA KANDEMİR</h1>
-        </div>
+<!-- İçerik -->
+<div class="content-layer">
 
-        <div class="experience-card">
-            <h3>Yurtdışı Proje Koordinatörü (2024 - 2026)</h3>
-            <p>Prefabrik yapı, uçak konseptli işletmeler ve aqua park projelerinde uçtan uca saha yönetimi; bütçe optimizasyonu, malzeme tedariki ve operasyonel koordinasyon.</p>
-        </div>
+    <div class="header-section">
+        <img src="IMG.jpeg.jpg" class="profile-img" alt="Sefa Kandemir">
 
-        <div class="experience-card">
-            <h3>Yurtdışı Satış Yöneticisi (2019 - 2024)</h3>
-            <p>Değerli madenler sektöründe yönetimsel operasyonlar; kasa yönetimi, stratejik müşteri ilişkileri, piyasa analizi ve iş geliştirme projeleri.</p>
-        </div>
-        
-        <div class="experience-card">
-            <h3>Yurtdışı Proje Koordinatörü (2018 - 2019)</h3>
-            <p>Mimari projelerin saha uyum kontrolleri ve revizyon süreçleri; taşeron firmaların iş güvenliği koordinasyonu ve kalite denetimi.</p>
-        </div>
-
-        <div class="experience-card">
-            <h3>Yurtdışı Operasyon Müdürü (2012 - 2017)</h3>
-            <p>Uluslararası gastronomi sektöründe yönetim ve operasyonel süreç yönetimi; maliyet kontrolü, envanter stratejileri ve hizmet kalitesi geliştirme.</p>
-        </div>
+        <h1>
+            SEFA<br>
+            KANDEMİR
+        </h1>
     </div>
 
-    <script>
-        function createMapleLeaf() {
-            const leaf = document.createElement('div');
-            leaf.className = 'maple-leaf';
-            leaf.innerHTML = '🍁';
-            leaf.style.left = Math.random() * 100 + 'vw';
-            // Çok yavaş süzülme (30-45 saniye)
-            leaf.style.animationDuration = Math.random() * 15 + 30 + 's';
-            document.getElementById('leaf-layer').appendChild(leaf);
-            setTimeout(() => leaf.remove(), 50000);
-        }
-        // Çok seyrek (8 saniyede bir yaprak)
-        setInterval(createMapleLeaf, 8000);
-    </script>
+    <div class="experience-card">
+        <h3>Yurtdışı Proje Koordinatörü (2024 - 2026)</h3>
+        <p>
+            Prefabrik yapı, uçak konseptli işletmeler ve aqua park projelerinde
+            uçtan uca saha yönetimi; bütçe optimizasyonu, malzeme tedariki ve
+            operasyonel koordinasyon.
+        </p>
+    </div>
+
+    <div class="experience-card">
+        <h3>Yurtdışı Satış Yöneticisi (2019 - 2024)</h3>
+        <p>
+            Değerli madenler sektöründe yönetimsel operasyonlar; kasa yönetimi,
+            stratejik müşteri ilişkileri, piyasa analizi ve iş geliştirme projeleri.
+        </p>
+    </div>
+
+    <div class="experience-card">
+        <h3>Yurtdışı Proje Koordinatörü (2018 - 2019)</h3>
+        <p>
+            Mimari projelerin saha uyum kontrolleri ve revizyon süreçleri;
+            taşeron firmaların iş güvenliği koordinasyonu ve kalite denetimi.
+        </p>
+    </div>
+
+    <div class="experience-card">
+        <h3>Yurtdışı Operasyon Müdürü (2012 - 2017)</h3>
+        <p>
+            Uluslararası gastronomi sektöründe yönetim ve operasyonel süreç
+            yönetimi; maliyet kontrolü, envanter stratejileri ve hizmet kalitesi
+            geliştirme.
+        </p>
+    </div>
+
+</div>
+
+<script>
+
+function createMapleLeaf(){
+
+    const leaf=document.createElement("div");
+    leaf.classList.add("maple-leaf");
+
+    leaf.innerHTML=`
+    <svg viewBox="0 0 512 512" width="100%" height="100%">
+        <path fill="#D4AF37"
+        d="M290 20L256 90L222 20L200 120L110 70L145 160L50 150L120 220L30 270L140 290L90 380L190 340L210 470L256 400L302 470L322 340L422 380L372 290L482 270L392 220L462 150L367 160L402 70L312 120Z"/>
+    </svg>`;
+
+    leaf.style.left=Math.random()*100+"vw";
+
+    leaf.style.animationDuration=
+        (30 + Math.random()*15)+"s";
+
+    document
+        .getElementById("leaf-layer")
+        .appendChild(leaf);
+
+    setTimeout(()=>{
+        leaf.remove();
+    },50000);
+}
+
+for(let i=0;i<8;i++){
+    setTimeout(createMapleLeaf,i*1500);
+}
+
+setInterval(createMapleLeaf,3000);
+
+</script>
+
 </body>
 </html>
