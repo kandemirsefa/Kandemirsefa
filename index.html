@@ -2,63 +2,51 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>SEFA KANDEMİR</title>
     <style>
         body {
             background-color: #fdfbf7;
-            color: #333;
-            font-family: 'Playfair Display', serif;
-            margin: 0;
-            padding: 60px 20px;
+            margin: 0; padding: 60px 20px;
             overflow-x: hidden;
+            font-family: 'Playfair Display', serif;
         }
 
-        .container { max-width: 900px; margin: auto; position: relative; z-index: 2; }
-        
-        .header-section { text-align: center; margin-bottom: 100px; }
-        
-        .profile-img {
-            width: 250px; height: 250px;
-            border-radius: 50%;
-            border: 6px solid #d4af37;
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
-            margin-bottom: 30px;
-            animation: pulse 3s infinite ease-in-out;
+        /* 1. Yaprak Katmanı: Tüm kutuların arkasında (z-index: 1) */
+        .leaf-layer {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1; pointer-events: none;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        h1 { font-size: 85px; margin: 0; color: #1a1a1a; letter-spacing: -3px; line-height: 1; }
-        
-        /* YAPRAK ANİMASYONU - Z-INDEX 1 (Kutuların arkasında) */
-        .maple-leaf {
-            position: fixed; top: -100px; color: #d4af37; font-size: 50px;
-            opacity: 0.6; animation: fall linear infinite; z-index: 1; pointer-events: none;
-        }
-        @keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
+        /* 2. İçerik Katmanı: Yaprakların üzerinde (z-index: 2) */
+        .content-layer { position: relative; z-index: 2; max-width: 900px; margin: auto; }
 
         .experience-card {
             border: 3px solid #d4af37;
-            padding: 40px;
-            margin-bottom: 40px;
-            /* Arka plan biraz şeffaf ki yapraklar arkadan geçebilsin */
-            background: rgba(253, 251, 247, 0.8);
+            padding: 40px; margin-bottom: 40px;
+            /* ÖNEMLİ: Arka planı düz renk (opak) yapıyoruz ki yaprakları maskelesin */
+            background-color: #fdfbf7; 
             border-radius: 20px;
-            transition: all 0.5s;
             position: relative;
-            z-index: 2; 
         }
-        
-        .experience-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-        h3 { font-size: 28px; color: #b8860b; margin: 0 0 15px 0; }
-        p { font-size: 20px; line-height: 1.8; color: #444; margin: 0; }
+        .maple-leaf {
+            position: absolute; color: #d4af37; font-size: 50px;
+            animation: fall linear infinite;
+        }
+        @keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
     </style>
 </head>
 <body>
+
+    <div class="leaf-layer" id="leaf-layer"></div>
+
+    <div class="content-layer">
+        <!-- Buraya kartlarını ekle -->
+        <div class="experience-card">
+            <h3>Yurtdışı Proje Koordinatörü (2024 - 2026)</h3>
+            <p>...</p>
+        </div>
+        <!-- Diğer kartlar -->
+    </div>
 
     <script>
         function createMapleLeaf() {
@@ -67,38 +55,10 @@
             leaf.innerHTML = '🍁';
             leaf.style.left = Math.random() * 100 + 'vw';
             leaf.style.animationDuration = Math.random() * 8 + 8 + 's';
-            document.body.appendChild(leaf);
+            document.getElementById('leaf-layer').appendChild(leaf);
             setTimeout(() => leaf.remove(), 16000);
         }
-        setInterval(createMapleLeaf, 600);
+        setInterval(createMapleLeaf, 800);
     </script>
-
-    <div class="container">
-        <div class="header-section">
-            <img src="IMG.jpeg.jpg" alt="Sefa Kandemir" class="profile-img">
-            <h1>SEFA<br>KANDEMİR</h1>
-        </div>
-
-        <div class="experience-card">
-            <h3>Yurtdışı Proje Koordinatörü (2024 - 2026)</h3>
-            <p>Prefabrik yapı, uçak konseptli işletmeler ve aqua park projelerinde uçtan uca saha yönetimi; bütçe optimizasyonu, malzeme tedariki ve operasyonel koordinasyon[span_1](start_span)[span_1](end_span).</p>
-        </div>
-
-        <div class="experience-card">
-            <h3>Yurtdışı Satış Yöneticisi (2019 - 2024)</h3>
-            <p>Değerli madenler sektöründe yönetimsel operasyonlar; kasa yönetimi, stratejik müşteri ilişkileri, piyasa analizi ve iş geliştirme projeleri[span_2](start_span)[span_2](end_span).</p>
-        </div>
-
-        <div class="experience-card">
-            <h3>Yurtdışı Proje Koordinatörü (2018 - 2019)</h3>
-            <p>Mimari projelerin saha uyum kontrolleri ve revizyon süreçleri; taşeron firmaların iş güvenliği koordinasyonu ve kalite denetimi[span_3](start_span)[span_3](end_span).</p>
-        </div>
-
-        <div class="experience-card">
-            <h3>Yurtdışı Operasyon Müdürü (2012 - 2017)</h3>
-            <p>Uluslararası gastronomi sektöründe yönetim ve operasyonel süreç yönetimi; maliyet kontrolü, envanter stratejileri ve hizmet kalitesi geliştirme[span_4](start_span)[span_4](end_span).</p>
-        </div>
-    </div>
-
 </body>
 </html>
