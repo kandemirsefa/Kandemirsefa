@@ -9,13 +9,11 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* 1. Yaprak Katmanı: En arkada (z-index: -1) */
         .leaf-layer {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1; pointer-events: none;
         }
 
-        /* 2. İçerik Katmanı: Yaprakların üzerinde (z-index: 1) */
         .content-layer { 
             position: relative; z-index: 1; max-width: 900px; margin: auto; 
             background-color: #fdfbf7;
@@ -37,7 +35,7 @@
             position: absolute; color: #d4af37; font-size: 50px;
             animation: fall linear infinite;
         }
-        @keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
     </style>
 </head>
 <body>
@@ -52,8 +50,9 @@
 
         <div class="experience-card">
             <h3>Yurtdışı Proje Koordinatörü (2024 - 2026)</h3>
-            <p>...</p>
+            <p>Prefabrik yapı, uçak konseptli işletmeler ve aqua park projelerinde uçtan uca saha yönetimi; bütçe optimizasyonu, malzeme tedariki ve operasyonel koordinasyon[span_0](start_span)[span_0](end_span).</p>
         </div>
+        <!-- Diğer kartlar aynı yapıda devam edebilir -->
     </div>
 
     <script>
@@ -62,12 +61,13 @@
             leaf.className = 'maple-leaf';
             leaf.innerHTML = '🍁';
             leaf.style.left = Math.random() * 100 + 'vw';
-            leaf.style.animationDuration = Math.random() * 10 + 10 + 's';
+            // Hız: Süreyi 15-20 saniyeye çıkararak çok daha yavaş süzülmelerini sağladım[span_1](start_span)[span_1](end_span)
+            leaf.style.animationDuration = Math.random() * 5 + 15 + 's';
             document.getElementById('leaf-layer').appendChild(leaf);
-            setTimeout(() => leaf.remove(), 20000);
+            setTimeout(() => leaf.remove(), 25000);
         }
-        // Yaprakların sıklığını azaltmak için süreyi 800ms'den 2500ms'ye çıkardım[span_2](start_span)[span_2](end_span)
-        setInterval(createMapleLeaf, 2500);
+        // Sıklık: Süreyi 4000ms yaparak yaprakların çok daha seyrek düşmesini sağladım[span_2](start_span)[span_2](end_span)
+        setInterval(createMapleLeaf, 4000);
     </script>
 </body>
 </html>
