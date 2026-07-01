@@ -33,9 +33,10 @@
 
         h1 { font-size: 85px; margin: 0; color: #1a1a1a; letter-spacing: -3px; line-height: 1; }
         
+        /* YAPRAK ANİMASYONU - Z-INDEX 1 (Kutuların arkasında kalması için) */
         .maple-leaf {
             position: fixed; top: -100px; color: #d4af37; font-size: 50px;
-            opacity: 0.8; animation: fall linear infinite; z-index: 3; pointer-events: none;
+            opacity: 0.6; animation: fall linear infinite; z-index: 1; pointer-events: none;
         }
         @keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
 
@@ -43,10 +44,13 @@
             border: 3px solid #d4af37;
             padding: 40px;
             margin-bottom: 40px;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.85); /* Hafif şeffaf arka plan */
             border-radius: 20px;
             transition: all 0.5s;
+            position: relative;
+            z-index: 2; /* Kutucuklar yaprakların önünde */
         }
+        
         .experience-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
         h3 { font-size: 28px; color: #b8860b; margin: 0 0 15px 0; }
@@ -76,22 +80,22 @@
 
         <div class="experience-card">
             <h3>Yurtdışı Proje Koordinatörü (2024 - 2026)</h3>
-            <p>Prefabrik yapı, uçak konseptli işletmeler ve aqua park projelerinde uçtan uca saha yönetimi; bütçe optimizasyonu, malzeme tedariki ve operasyonel koordinasyon.</p>
+            <p>Prefabrik yapı, uçak konseptli işletmeler ve aqua park projelerinde uçtan uca saha yönetimi; bütçe optimizasyonu, malzeme tedariki ve operasyonel koordinasyon[span_0](start_span)[span_0](end_span).</p>
         </div>
 
         <div class="experience-card">
             <h3>Yurtdışı Satış Yöneticisi (2019 - 2024)</h3>
-            <p>Değerli madenler sektöründe yönetimsel operasyonlar; kasa yönetimi, stratejik müşteri ilişkileri, piyasa analizi ve iş geliştirme projeleri.</p>
+            <p>Değerli madenler sektöründe yönetimsel operasyonlar; kasa yönetimi, stratejik müşteri ilişkileri, piyasa analizi ve iş geliştirme projeleri[span_1](start_span)[span_1](end_span).</p>
         </div>
 
         <div class="experience-card">
             <h3>Yurtdışı Proje Koordinatörü (2018 - 2019)</h3>
-            <p>Mimari projelerin saha uyum kontrolleri ve revizyon süreçleri; taşeron firmaların iş güvenliği koordinasyonu ve kalite denetimi.</p>
+            <p>Mimari projelerin saha uyum kontrolleri ve revizyon süreçleri; taşeron firmaların iş güvenliği koordinasyonu ve kalite denetimi[span_2](start_span)[span_2](end_span).</p>
         </div>
 
         <div class="experience-card">
             <h3>Yurtdışı Operasyon Müdürü (2012 - 2017)</h3>
-            <p>Uluslararası gastronomi sektöründe yönetim ve operasyonel süreç yönetimi; maliyet kontrolü, envanter stratejileri ve hizmet kalitesi geliştirme.</p>
+            <p>Uluslararası gastronomi sektöründe yönetim ve operasyonel süreç yönetimi; maliyet kontrolü, envanter stratejileri ve hizmet kalitesi geliştirme[span_3](start_span)[span_3](end_span).</p>
         </div>
     </div>
 
