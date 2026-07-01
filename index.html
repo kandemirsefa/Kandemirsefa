@@ -6,64 +6,65 @@
 <title>Sefa Kandemir | Uluslararası Operasyonlar</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-    /* 1. Temiz ve Ferah Arka Plan */
     body {
         margin: 0;
-        background: #fdfdfd; /* Çok açık krem/beyaz */
+        background: #fdfdfd;
         color: #1f2937;
         font-family: 'Inter', sans-serif;
         line-height: 1.8;
     }
 
-    /* 2. Hafif, Zarif Işıltı (Sadece köşelerde, yazıyı engellemez) */
+    /* Arka plan ışıltısı */
     body::before {
         content: "";
         position: fixed;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+        top: -50%; left: -50%;
+        width: 200%; height: 200%;
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.04) 0%, transparent 70%);
         animation: rotateGlow 30s linear infinite;
         pointer-events: none;
         z-index: -1;
     }
 
-    @keyframes rotateGlow {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
+    @keyframes rotateGlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
     .container {
         max-width: 800px;
-        margin: 60px auto;
+        margin: 100px auto 60px; /* Fotoğraf için üstten boşluk bıraktık */
         background: #ffffff;
-        padding: 60px;
+        padding: 80px 60px 60px;
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Yumuşak gölge */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        position: relative;
     }
 
-    h1 { font-family: 'Playfair Display', serif; color: #111827; text-align: center; font-size: 2.5rem; margin-bottom: 10px; }
+    /* FOTOĞRAF ALANI */
+    .hero-photo {
+        position: absolute;
+        top: -70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: 4px solid #ffffff;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        overflow: hidden;
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    h1 { font-family: 'Playfair Display', serif; color: #111827; text-align: center; font-size: 2.5rem; margin-top: 20px; }
     .subtitle { text-align: center; color: #b59b3a; margin-bottom: 60px; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; }
 
-    /* 3. Bölüm Aralarındaki Boşluklar (Ferahlama) */
     .section { margin-bottom: 70px; }
     .section-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 25px; border-left: 4px solid #d4af37; padding-left: 15px; }
 
-    .exp { margin-bottom: 40px; } /* Deneyim arası boşluk */
+    .exp { margin-bottom: 40px; }
     .role { font-size: 1.2rem; font-weight: 600; color: #111827; }
     .meta { color: #b59b3a; display: block; margin: 5px 0 15px; font-size: 0.9rem; }
     .desc { color: #4b5563; }
 
-    .tag { 
-        display: inline-block;
-        padding: 8px 18px;
-        margin: 5px 8px 5px 0;
-        background: #f9f7f2;
-        border: 1px solid #e5e7eb;
-        border-radius: 8px;
-        font-size: 0.85rem;
-    }
+    .tag { display: inline-block; padding: 8px 18px; margin: 5px 8px 5px 0; background: #f9f7f2; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 0.85rem; }
 
     footer { text-align: center; margin-top: 80px; color: #9ca3af; font-size: 0.8rem; }
 </style>
@@ -71,6 +72,11 @@
 <body>
 
 <div class="container">
+    <!-- Buraya fotoğrafınız geri geldi -->
+    <div class="hero-photo">
+        <img src="IMG.jpeg.jpg" alt="Sefa Kandemir">
+    </div>
+
     <h1>Sefa Kandemir</h1>
     <div class="subtitle">Uluslararası Operasyonlar • Proje • Ticaret</div>
 
