@@ -2,7 +2,6 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEFA KANDEMİR</title>
     <style>
         body {
@@ -10,19 +9,31 @@
             color: #2c2c2c;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 80px 40px;
+            padding: 40px;
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* ALTIN YAPRAK ANİMASYONU */
-        .leaf {
+        /* Başlık Koordinasyonu */
+        .header-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .profile-img {
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            border: 4px solid #d4af37;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 50px; margin: 0; text-transform: uppercase; letter-spacing: -1px; }
+
+        /* ÇINAR YAPRAĞI ANİMASYONU */
+        .maple-leaf {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #d4af37;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            opacity: 0.4;
+            color: #d4af37;
+            font-size: 30px;
+            opacity: 0.6;
             animation: fall linear infinite;
         }
 
@@ -31,58 +42,37 @@
         }
 
         .container { max-width: 800px; margin: auto; position: relative; z-index: 1; }
-
-        .profile-img {
-            width: 150px; height: 150px; border-radius: 50%;
-            object-fit: cover; margin-bottom: 30px;
-            border: 3px solid #d4af37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-        }
-
-        .fade-up { opacity: 0; transform: translateY(30px); animation: fadeUp 1s ease forwards; }
-        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-
-        h1 { font-size: 70px; font-weight: 700; line-height: 0.9; margin-bottom: 40px; letter-spacing: -2px; color: #1a1a1a; }
-        .content-block { margin-bottom: 60px; animation-delay: 0.4s; }
-        h2 { font-size: 14px; text-transform: uppercase; color: #b8860b; margin-bottom: 20px; letter-spacing: 3px; }
-        p { font-size: 22px; max-width: 600px; line-height: 1.5; color: #444; }
-        .link-btn { font-size: 20px; color: #b8860b; text-decoration: underline; cursor: pointer; display: block; margin-top: 40px; transition: 0.3s; }
-        .link-btn:hover { color: #000; }
+        .content-block { margin-bottom: 40px; }
+        h2 { color: #b8860b; font-size: 12px; letter-spacing: 3px; }
     </style>
 </head>
 <body>
 
-    <!-- Yaprakları oluşturacak script -->
     <script>
-        function createLeaf() {
+        // Kanada yaprağı karakteri: 🍁
+        function createMapleLeaf() {
             const leaf = document.createElement('div');
-            leaf.className = 'leaf';
+            leaf.className = 'maple-leaf';
+            leaf.innerHTML = '🍁';
             leaf.style.left = Math.random() * 100 + 'vw';
-            leaf.style.animationDuration = Math.random() * 5 + 5 + 's';
+            leaf.style.animationDuration = Math.random() * 5 + 7 + 's';
             document.body.appendChild(leaf);
-            setTimeout(() => leaf.remove(), 10000);
+            setTimeout(() => leaf.remove(), 12000);
         }
-        setInterval(createLeaf, 800);
+        setInterval(createMapleLeaf, 1500);
     </script>
 
     <div class="container">
-        <img src="IMG.jpeg.jpg" alt="Sefa Kandemir" class="profile-img fade-up">
-        
-        <h1 class="fade-up">SEFA<br>KANDEMİR</h1>
+        <div class="header-section">
+            <img src="IMG.jpeg.jpg" alt="Sefa Kandemir" class="profile-img">
+            <h1>SEFA KANDEMİR</h1>
+        </div>
 
-        <div class="content-block fade-up">
+        <div class="content-block">
             <h2>OPERASYON & STRATEJİ</h2>
             <p>12 yılı aşkın uluslararası deneyimle; lojistik optimizasyonu, saha operasyonları ve kriz yönetimi süreçlerine stratejik liderlik ediyorum.</p>
         </div>
-
-        <div class="content-block fade-up">
-            <h2>TEKNİK YETKİNLİK</h2>
-            <p>Ajax Systems bünyesindeki donanım test süreçleri, sistem mimarisi ve yazılım entegrasyonu konularında mühendislik disipliniyle çözümler geliştiriyorum.</p>
-        </div>
-
-        <div class="content-block fade-up">
-            <h2>İLETİŞİM</h2>
-            <a class="link-btn">CV_DOWNLOAD.PDF</a>
-        </div>
+        <!-- Diğer içeriklerin aynı şekilde devam eder... -->
     </div>
 
 </body>
