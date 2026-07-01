@@ -5,15 +5,27 @@
     <title>Sefa Kandemir | Dijital Portfolyo</title>
     <style>
         body { background-color: #fdfbf7; margin: 0; overflow-x: hidden; font-family: 'Playfair Display', serif; }
-        .leaf-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
-        .content-layer { position: relative; z-index: 1; max-width: 900px; margin: auto; background-color: #fdfbf7; padding: 60px 20px; }
+        .content-layer { position: relative; z-index: 1; max-width: 900px; margin: auto; padding: 60px 20px; }
 
-        .header-section { text-align: center; margin-bottom: 60px; position: relative; z-index: 2; }
+        .header-section { text-align: center; margin-bottom: 60px; }
         .profile-img { width: 220px; height: 220px; border-radius: 50%; border: 6px solid #d4af37; box-shadow: 0 0 40px rgba(212, 175, 55, 0.3); margin-bottom: 20px; }
         h1 { font-size: 60px; margin: 0; color: #1a1a1a; letter-spacing: -2px; }
         .hero-text { font-size: 20px; color: #555; max-width: 600px; margin: 20px auto; font-style: italic; }
 
-        .info-card { border: 3px solid #d4af37; padding: 40px; margin-bottom: 40px; background-color: #fdfbf7; border-radius: 20px; position: relative; z-index: 2; }
+        /* Kutu tasarımı ve yaprakların hapsolduğu yer */
+        .info-card { 
+            border: 3px solid #d4af37; 
+            padding: 40px; 
+            margin-bottom: 40px; 
+            background-color: #fdfbf7; 
+            border-radius: 20px; 
+            position: relative; 
+            overflow: hidden; /* Yaprakların kutu dışına taşmasını engeller */
+        }
+        
+        /* Kutu içi içeriklerin önde kalması için */
+        .card-content { position: relative; z-index: 2; }
+        
         h2 { color: #b8860b; margin-top: 0; border-bottom: 2px solid #d4af37; display: inline-block; padding-bottom: 5px; }
         ul { list-style: none; padding: 0; font-size: 18px; color: #444; line-height: 2; }
         li strong { color: #1a1a1a; }
@@ -21,8 +33,20 @@
         .lang-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
         .lang-item { text-align: center; padding: 15px; background: #fffaf0; border: 1px solid #e5d3b3; border-radius: 10px; }
 
-        .maple-leaf { position: absolute; color: #FFD700; font-size: 50px; animation: fall linear infinite; }
-        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+        /* Yaprak animasyonu */
+        .card-leaf { 
+            position: absolute; 
+            color: #d4af37; 
+            font-size: 24px; 
+            pointer-events: none; 
+            animation: fall linear forwards; 
+            z-index: 1; 
+            opacity: 0.5;
+        }
+        @keyframes fall { 
+            0% { transform: translateY(-50px) rotate(0deg); } 
+            100% { transform: translateY(300px) rotate(360deg); } 
+        }
 
         .site-footer { background-color: #000; color: #fff; padding: 60px 20px; font-family: sans-serif; margin-top: 100px; }
         .footer-grid { max-width: 900px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -30,8 +54,6 @@
     </style>
 </head>
 <body>
-
-    <div class="leaf-layer" id="leaf-layer"></div>
 
     <div class="content-layer">
         <div class="header-section">
@@ -41,25 +63,31 @@
         </div>
 
         <div class="info-card">
-            <h2>✍️ Hakkımda</h2>
-            <p style="font-size: 18px; color: #444; line-height: 1.6;">Profesyonel yolculuğumda saha operasyonlarından stratejik yönetime kadar geniş bir yelpazede deneyim kazandım. İşin mutfağında olmayı, operasyonel süreçleri optimize etmeyi ve verimli çalışma ortamları kurgulamayı seviyorum.</p>
+            <div class="card-content">
+                <h2>✍️ Hakkımda</h2>
+                <p style="font-size: 18px; color: #444; line-height: 1.6;">Profesyonel yolculuğumda saha operasyonlarından stratejik yönetime kadar geniş bir yelpazede deneyim kazandım. İşin mutfağında olmayı, operasyonel süreçleri optimize etmeyi ve verimli çalışma ortamları kurgulamayı seviyorum.</p>
+            </div>
         </div>
 
         <div class="info-card">
-            <h2>🛠️ Nelerle İlgileniyorum?</h2>
-            <ul>
-                <li><strong>Saha Operasyonları:</strong> Teknik kurulumlar ve büyük çaplı organizasyonların yönetimi.</li>
-                <li><strong>Lojistik & Süreç Yönetimi:</strong> Operasyonel akışın uçtan uca planlanması ve yürütülmesi.</li>
-                <li><strong>Kişisel Notlar:</strong> İş güvenliği, verimlilik ve sürekli gelişim üzerine stratejik düşünceler.</li>
-            </ul>
+            <div class="card-content">
+                <h2>🛠️ Nelerle İlgileniyorum?</h2>
+                <ul>
+                    <li><strong>Saha Operasyonları:</strong> Teknik kurulumlar ve büyük çaplı organizasyonların yönetimi.</li>
+                    <li><strong>Lojistik & Süreç Yönetimi:</strong> Operasyonel akışın uçtan uca planlanması ve yürütülmesi.</li>
+                    <li><strong>Kişisel Notlar:</strong> İş güvenliği, verimlilik ve sürekli gelişim üzerine stratejik düşünceler.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="info-card">
-            <h2>🌍 Dil Yetkinliklerim</h2>
-            <div class="lang-grid">
-                <div class="lang-item"><strong>Türkçe</strong><br>Anadil</div>
-                <div class="lang-item"><strong>Arapça</strong><br>İleri Seviye</div>
-                <div class="lang-item"><strong>İngilizce</strong><br>Orta Seviye</div>
+            <div class="card-content">
+                <h2>🌍 Dil Yetkinliklerim</h2>
+                <div class="lang-grid">
+                    <div class="lang-item"><strong>Türkçe</strong><br>Anadil</div>
+                    <div class="lang-item"><strong>Arapça</strong><br>İleri Seviye</div>
+                    <div class="lang-item"><strong>İngilizce</strong><br>Orta Seviye</div>
+                </div>
             </div>
         </div>
     </div>
@@ -78,16 +106,25 @@
     </footer>
 
     <script>
-        function createMapleLeaf() {
-            const leaf = document.createElement('div');
-            leaf.className = 'maple-leaf';
-            leaf.innerHTML = '🍁';
-            leaf.style.left = Math.random() * 100 + 'vw';
-            leaf.style.animationDuration = Math.random() * 15 + 30 + 's';
-            document.getElementById('leaf-layer').appendChild(leaf);
-            setTimeout(() => leaf.remove(), 50000);
+        function createLeafInCards() {
+            const cards = document.querySelectorAll('.info-card');
+            cards.forEach(card => {
+                const leaf = document.createElement('div');
+                leaf.className = 'card-leaf';
+                leaf.innerHTML = '🍁';
+                // Kutunun genişliğinde rastgele yatay konum
+                leaf.style.left = Math.random() * 90 + '%';
+                // Animasyon süresini rastgele ayarla
+                leaf.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                
+                card.appendChild(leaf);
+                
+                // Animasyon bitince DOM'dan sil
+                setTimeout(() => leaf.remove(), 7000);
+            });
         }
-        setInterval(createMapleLeaf, 8000);
+        // Her 1.5 saniyede bir yeni yaprak oluştur
+        setInterval(createLeafInCards, 1500);
     </script>
 </body>
 </html>
