@@ -2,130 +2,64 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CORE // SYSTEM // LAB</title>
+    <title>SEFA KANDEMİR | OPERATIONS LAB</title>
     <style>
         :root {
-            --bg: #030303;
-            --neon: #7000ff;
-            --glass: rgba(20, 20, 25, 0.85);
-            --text: #a0a0a0;
+            --bg: #0a0a0a;
+            --accent: #ffb400; /* Proje/Operasyon Odaklı Altın/Sarı */
+            --text: #e0e0e0;
+            --glass: rgba(255, 255, 255, 0.03);
         }
 
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            display: flex;
-            justify-content: center;
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
+        .container { width: 85%; max-width: 1000px; margin: auto; padding: 60px 0; }
+
+        /* HEADER: Endüstriyel Başlık */
+        .header-line { border-bottom: 1px solid var(--accent); padding-bottom: 20px; margin-bottom: 40px; }
+        .header-line h1 { font-size: 3em; margin: 0; color: #fff; letter-spacing: -1px; }
+
+        /* GRID: Vaka Analiz Kartları */
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        
+        .card { 
+            background: var(--glass); border: 1px solid #333; padding: 30px; 
+            transition: 0.4s; position: relative; overflow: hidden; 
         }
+        .card:hover { border-color: var(--accent); transform: translateY(-10px); }
+        .card h3 { color: var(--accent); margin-top: 0; }
 
-        /* HAREKETLİ ARKA PLAN */
-        .grid-overlay {
-            position: fixed; width: 100%; height: 100%;
-            background-image: radial-gradient(var(--neon) 0.5px, transparent 0.5px);
-            background-size: 40px 40px;
-            z-index: -1;
-            animation: gridPulse 5s infinite alternate;
-        }
-
-        @keyframes gridPulse {
-            from { opacity: 0.1; }
-            to { opacity: 0.3; }
-        }
-
-        .container { width: 90%; max-width: 700px; padding: 60px 0; }
-
-        /* HAREKETLİ VE YÜZEN KARTLAR */
-        .section-card {
-            background: var(--glass);
-            border: 1px solid var(--neon);
-            padding: 40px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(15px);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: float 6s ease-in-out infinite;
-            cursor: default;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        .section-card:hover {
-            transform: scale(1.05) !important;
-            border-color: #fff;
-            box-shadow: 0 0 40px var(--neon);
-            animation: none;
-        }
-
-        h2 { color: #fff; text-transform: uppercase; letter-spacing: 5px; font-size: 1.4em; }
-
-        /* BUTONLAR */
-        .btn {
-            background: transparent;
-            color: var(--neon);
-            border: 2px solid var(--neon);
-            padding: 12px 25px;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-weight: bold;
-            transition: 0.3s;
-            margin-top: 15px;
-        }
-
-        .btn:hover {
-            background: var(--neon);
-            color: #fff;
-            box-shadow: 0 0 20px var(--neon);
-        }
-
-        #status-log { margin-top: 20px; font-size: 0.9em; color: var(--neon); }
+        /* STOK GÖRÜNÜMÜ */
+        .status-dot { height: 10px; width: 10px; background: var(--accent); display: inline-block; border-radius: 50%; margin-right: 10px; }
     </style>
 </head>
 <body>
 
-    <div class="grid-overlay"></div>
-
     <div class="container">
-        <header style="text-align: center; margin-bottom: 80px;">
-            <h1 style="color: #fff; letter-spacing: 12px; font-size: 2.5em;">CORE // LAB</h1>
-            <p>> SYSTEM STATUS: ONLINE</p>
-        </header>
+        <div class="header-line">
+            <h1>SEFA KANDEMİR</h1>
+            <p><span class="status-dot"></span> PROJECT COORDINATION & HARDWARE INTEGRATION</p>
+        </div>
 
-        <section class="section-card">
-            <h2>01 // DIAGNOSTIC</h2>
-            <p>Donanım mimarisi ve sistem kararlılığı testi.</p>
-            <button class="btn" onclick="runTest()">Testi Başlat</button>
-            <div id="status-log"></div>
-        </section>
+        <div class="grid-layout">
+            <!-- Tecrübe Modülü -->
+            <section class="card">
+                <h3>VAKA ANALİZİ: 12+ YIL</h3>
+                <p>Uluslararası saha operasyonları, lojistik optimizasyon ve kriz anlarında stratejik karar alma mekanizmaları.</p>
+            </section>
 
-        <section class="section-card">
-            <h2>02 // NODES</h2>
-            <p>Bağlı olan dijital ekosistem düğümleri:</p>
-            <ul style="list-style: none; padding: 0;">
-                <li>> SAKURA_CORE</li>
-                <li>> VIPLOX_ENGINE</li>
-                <li>> IRONBOW_SYS</li>
-            </ul>
-        </section>
+            <!-- Yetkinlik Modülü -->
+            <section class="card">
+                <h3>SİSTEM MİMARİSİ</h3>
+                <p>Donanım testi (Ajax Systems), bütçe kontrolü ve karmaşık operasyonel süreçlerin yönetimi.</p>
+            </section>
 
-        <section class="section-card">
-            <h2>03 // TERMINAL</h2>
-            <p>İletişim protokollerini başlatmak için tıklayın.</p>
-            <button class="btn" onclick="alert('Protokol Başlatıldı: 0x4F92')">Bağlan</button>
-        </section>
+            <!-- İletişim Modülü -->
+            <section class="card">
+                <h3>İLETİŞİM PROTOKOLÜ</h3>
+                <p>İş birliği ve profesyonel ağ için doğrudan erişim:</p>
+                <button style="background:none; border:1px solid var(--accent); color:var(--accent); padding:10px; cursor:pointer;">CV_DOWNLOAD.pdf</button>
+            </section>
+        </div>
     </div>
-
-    <script>
-        function runTest() {
-            const log = document.getElementById('status-log');
-            log.innerHTML = "> ANALYZING...<br>> HARDWARE: READY<br>> STABILITY: 100%";
-        }
-    </script>
 </body>
 </html>
